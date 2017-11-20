@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
         mc:Ignorable="d"
-        Title="PDF" Height="500" Width="600">
+        Title="PDF" Height="500" Width="600" Closed="PDF_Closed">
     <Window.Background>
         <ImageBrush ImageSource="pictures/pdfEmpty.jpg"/>
     </Window.Background>
     <Grid>
-        <TextBox x:Name="title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" Margin="23,127,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Width="546" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" BorderBrush="{x:Null}" />
-        <TextBox x:Name="_abstract" HorizontalAlignment="Left" Height="130" Margin="23,243,0,0" TextWrapping="Wrap" Text="abstract " VerticalAlignment="Top" Width="264" BorderBrush="Transparent" FontSize="11" Cursor="Arrow" IsReadOnly="True"/>
-        <TextBox x:Name="content1" HorizontalAlignment="Left" Height="246" Margin="287,223,0,0" TextWrapping="Wrap" Text="Content " VerticalAlignment="Top" Width="282" BorderBrush="Transparent" FontSize="11" Cursor="Arrow" IsReadOnly="True"/>
-        <TextBox x:Name="content0" HorizontalAlignment="Left" Height="73" Margin="23,393,0,0" TextWrapping="Wrap" Text="content0" VerticalAlignment="Top" Width="264" BorderBrush="Transparent" FontSize="11"  Cursor="Arrow" IsReadOnly="True" />
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="23,223,0,0" TextWrapping="Wrap" Text="Abstract" VerticalAlignment="Top" Width="264" FontWeight="Bold" BorderBrush="Transparent" Cursor="Arrow"  IsReadOnly="True"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="23,373,0,0" TextWrapping="Wrap" Text="Introduction" VerticalAlignment="Top" Width="264" FontWeight="Bold" BorderBrush="Transparent"  Cursor="Arrow" IsReadOnly="True"/>
-        <TextBlock x:Name="fileTitle" HorizontalAlignment="Left" Margin="32,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="430"/>
+        <TextBox x:Name="title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" Margin="23,127,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Width="546" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" />
+        <TextBox x:Name="_abstract" HorizontalAlignment="Left" Height="130" Margin="23,243,0,0" TextWrapping="Wrap" Text="abstract " VerticalAlignment="Top" Width="264" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0"  KeyDown="CtrlDown"/>
+        <TextBox x:Name="content1" HorizontalAlignment="Left" Height="246" Margin="287,223,0,0" TextWrapping="Wrap" Text="Content " VerticalAlignment="Top" Width="282" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown"/>
+        <TextBox x:Name="content0" HorizontalAlignment="Left" Height="73" Margin="23,393,0,0" TextWrapping="Wrap" Text="content0" VerticalAlignment="Top" Width="264" FontSize="11"  Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="23,223,0,0" TextWrapping="Wrap" Text="Abstract" VerticalAlignment="Top" Width="264" FontWeight="Bold" Cursor="Arrow"  IsReadOnly="True" BorderBrush="White" BorderThickness="0"  />
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="23,373,0,0" TextWrapping="Wrap" Text="Introduction" VerticalAlignment="Top" Width="264" FontWeight="Bold" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" />
+        <TextBox x:Name="fileTitle" HorizontalAlignment="Left" Margin="32,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="430" BorderBrush="White" BorderThickness="0" IsReadOnly="True" Cursor="Arrow" />
 
 
     </Grid>

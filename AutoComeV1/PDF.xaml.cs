@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace AutoComeV1
 {
     /// <summary>
@@ -19,10 +20,23 @@ namespace AutoComeV1
     /// </summary>
     public partial class PDF : Window
     {
-        public PDF(int source)
+        String[,] operations = new String[20, 2];
+        public event Action<String[,]> Check;
+
+        //public event EventHandler<WindowEventArgs> DialogFinished;
+
+        public PDF(int source, String[,] passedOperations)
         {
             InitializeComponent();
-            
+            //operations = passedOperations;
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    operations[i, j] = passedOperations[i,j];
+                }
+            }
+            //title.Text = passedOperations[19,1];
             this.Activate();
             fileTitle.Text = ("A"+source.ToString()+".pdf");
             title.Text = getText(source, "title");
@@ -297,6 +311,65 @@ namespace AutoComeV1
             }
             return content;
         }
+
+        private void addToOperationList(String newOperaton, String newTarget)
+        {
+            for (int i = 0; i < 19; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    operations[i, j] = operations[i + 1, j];
+                }
+
+            }
+            operations[19, 0] = newOperaton;
+            operations[19, 1] = newTarget;
+        }
+
+        
+
+        private void CtrlDown(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.C)
+            {
+
+                if (title.SelectedText != null)
+                {
+                    addToOperationList("Copy", "title");
+                }
+                else if (_abstract.SelectedText != null)
+                {
+                    addToOperationList("Copy", "abstract");
+                }
+                else if (content0.SelectedText != null)
+                {
+                    addToOperationList("Copy", "content0");
+                }
+                else if (content1.SelectedText != null)
+                {
+                    addToOperationList("Copy", "content1");
+                }
+            }
+            else if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.V)
+            {
+                addToOperationList("Paste to", "test.txt");
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.WriteLine(operations[i, j]);
+                }
+            }
+        }
+
+        private void PDF_Closed(object sender, EventArgs e)
+        {
+            if (Check != null)
+                Check(operations);
+
+        }
     }
+
     
 }

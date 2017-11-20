@@ -99,18 +99,26 @@ namespace AutoComeV1
             //TO-DO:add a pause 
             //Task.Factory.StartNew(() =>
             //{
-                Thread.Sleep(2000);
-                Information newInformation = new Information();
-                newInformation.Show();
-                newInformation.Activate();
-                newInformation.Focus();
-                newInformation.Topmost = true;
-                this.Close();
+                
 
             //});
 
-            
-
+            //await Task.Delay(1000);
+            Thread t = new Thread(() =>
+            {
+                Thread.Sleep(1000);//次线程休眠1秒
+                Dispatcher.Invoke(new Action(() =>
+                {
+                    Thread.Sleep(2000);
+                    Information newInformation = new Information();
+                    newInformation.Show();
+                    newInformation.Activate();
+                    newInformation.Focus();
+                    newInformation.Topmost = true;
+                    this.Close();
+                }));
+            });
+            t.Start();
         }
 
 
