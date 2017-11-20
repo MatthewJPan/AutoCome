@@ -128,10 +128,13 @@
     <Resource Include="pictures\PDFicon.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="pictures\completed.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="pictures\selectedBackground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pictures\completed.png" />
+    <Resource Include="pictures\progress.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

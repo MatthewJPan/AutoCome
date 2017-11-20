@@ -13,28 +13,28 @@
     </Window.Background>
 
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="599" Margin="278,144,0,0" VerticalAlignment="Top" Width="1268">
+        <Grid HorizontalAlignment="Left" Height="599" Margin="278,144,0,0" VerticalAlignment="Top" Width="1268"  >
             <Image x:Name="PDFicon0"  HorizontalAlignment="Left" Height="100" Margin="10,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
 
-            <TextBox x:Name="PDFname0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="10,130,0,0" TextWrapping="Wrap" Text="A0.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="10,130,0,0" TextWrapping="Wrap" Text="A0.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon1" HorizontalAlignment="Left" Height="100" Margin="160,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="160,130,0,0" TextWrapping="Wrap" Text="A1.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="160,130,0,0" TextWrapping="Wrap" Text="A1.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon2" HorizontalAlignment="Left" Height="100" Margin="310,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="310,130,0,0" TextWrapping="Wrap" Text="A2.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="310,130,0,0" TextWrapping="Wrap" Text="A2.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon3" HorizontalAlignment="Left" Height="100" Margin="460,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="460,130,0,0" TextWrapping="Wrap" Text="A3.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="460,130,0,0" TextWrapping="Wrap" Text="A3.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon4" HorizontalAlignment="Left" Height="100" Margin="610,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="610,130,0,0" TextWrapping="Wrap" Text="A4.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="610,130,0,0" TextWrapping="Wrap" Text="A4.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon5" HorizontalAlignment="Left" Height="100" Margin="760,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="760,130,0,0" TextWrapping="Wrap" Text="A5.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="760,130,0,0" TextWrapping="Wrap" Text="A5.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon6" HorizontalAlignment="Left" Height="100" Margin="910,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="910,130,0,0" TextWrapping="Wrap" Text="A6.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="910,130,0,0" TextWrapping="Wrap" Text="A6.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon7" HorizontalAlignment="Left" Height="100" Margin="1050,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="1050,130,0,0" TextWrapping="Wrap" Text="A7.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="1050,130,0,0" TextWrapping="Wrap" Text="A7.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon8" HorizontalAlignment="Left" Height="100" Margin="10,180,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="10,280,0,0" TextWrapping="Wrap" Text="A8.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="10,280,0,0" TextWrapping="Wrap" Text="A8.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon9" HorizontalAlignment="Left" Height="100" Margin="160,180,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
-            <TextBox x:Name="PDFname9" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="160,280,0,0" TextWrapping="Wrap" Text="A9.pdf" VerticalAlignment="Top" Width="100" FontSize="18"/>
+            <TextBox x:Name="PDFname9" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="160,280,0,0" TextWrapping="Wrap" Text="A9.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
 
         </Grid>
         <Rectangle x:Name="back0" HorizontalAlignment="Left" Height="130" Margin="287,168,0,0" VerticalAlignment="Top" Width="100"/>
@@ -48,16 +48,37 @@
         <Rectangle x:Name="back8" HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="100"/>
         <Rectangle x:Name="back9" HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="100"/>
 
+        <Button Content=" " HorizontalAlignment="Left" Height="668" Margin="263,123,0,0" VerticalAlignment="Top" Width="1331" Background="Transparent" BorderBrush="Transparent" Opacity="0" Click="Click" FontWeight="Bold"/>
+
         <Button x:Name="button0" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button1" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button2" Content=" " HorizontalAlignment="Left" Height="130" Margin="590,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button3" Content=" " HorizontalAlignment="Left" Height="130" Margin="740,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button4" Content=" " HorizontalAlignment="Left" Height="130" Margin="886,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button5" Content=" " HorizontalAlignment="Left" Height="130" Margin="1040,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button6" Content=" " HorizontalAlignment="Left" Height="130" Margin="1188,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button7" Content=" " HorizontalAlignment="Left" Height="130" Margin="1328,168,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button8" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="button9" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="102" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button x:Name="button1" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button2" Content=" " HorizontalAlignment="Left" Height="130" Margin="590,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button3" Content=" " HorizontalAlignment="Left" Height="130" Margin="740,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button4" Content=" " HorizontalAlignment="Left" Height="130" Margin="886,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button5" Content=" " HorizontalAlignment="Left" Height="130" Margin="1040,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button6" Content=" " HorizontalAlignment="Left" Height="130" Margin="1188,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button7" Content=" " HorizontalAlignment="Left" Height="130" Margin="1328,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button8" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button9" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Rectangle x:Name="buttonHolder" HorizontalAlignment="Left" Height="84" Margin="590,303,0,0" VerticalAlignment="Top" Width="150" Fill="#FF3D8BC1"/>
+        <Button x:Name="operateButton" Content="Apply to All" HorizontalAlignment="Left" Margin="590,303,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="ApplyClick">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFE3F2FF" Offset="0"/>
+                    <GradientStop Color="#FF269EFF" Offset="0.989"/>
+                    <GradientStop Color="#FF5EB4FD"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="settingButton" Content="Open Settings" HorizontalAlignment="Left" Margin="590,346,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="SettingClick">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFE3F2FF" Offset="0"/>
+                    <GradientStop Color="#FF269EFF" Offset="0.989"/>
+                    <GradientStop Color="#FF5EB4FD"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

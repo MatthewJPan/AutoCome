@@ -23,5 +23,15 @@ namespace AutoComeV1
         {
             InitializeComponent();
         }
+
+        private void UndoClick(object sender, RoutedEventArgs e)
+        {
+            //TO-DO: undo the actions;
+        }
+
+        private void OKClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

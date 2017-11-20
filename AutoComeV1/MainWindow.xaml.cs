@@ -136,49 +136,235 @@ namespace AutoComeV1
         {
             if (e.Source == button0)
             {
-                back0.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back0.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = selectBrush;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button1)
             {
-                back1.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back1.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = selectBrush;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button2)
             {
-                back2.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back2.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = selectBrush;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button3)
             {
-                back3.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back3.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = selectBrush;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button4)
             {
-                back4.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back4.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = selectBrush;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button5)
             {
-                back5.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back5.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = selectBrush;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button6)
             {
-                back6.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back6.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = selectBrush;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
             else if (e.Source == button7)
             {
-                back7.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back7.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = selectBrush;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                }
             }
 
             else if (e.Source == button8)
             {
-                back8.Fill = selectBrush;
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back8.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = selectBrush;
+                    back9.Fill = Brushes.Transparent;
+                }
+            }
+            else if (e.Source == button9)
+            {
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back9.Fill = selectBrush;
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = selectBrush;
+                }
+                
             }
             else
             {
-                back9.Fill = selectBrush;
+                back0.Fill = Brushes.Transparent;
+                back1.Fill = Brushes.Transparent;
+                back2.Fill = Brushes.Transparent;
+                back3.Fill = Brushes.Transparent;
+                back4.Fill = Brushes.Transparent;
+                back5.Fill = Brushes.Transparent;
+                back6.Fill = Brushes.Transparent;
+                back7.Fill = Brushes.Transparent;
+                back8.Fill = Brushes.Transparent;
+                back9.Fill = Brushes.Transparent;
             }
 
         }
 
+        private void ApplyClick(object sender, RoutedEventArgs e)
+        {
+           //TO-DO：automatically copy all
+        }
 
+        private void SettingClick(object sender, RoutedEventArgs e)
+        {
+            Settings newSettings = new Settings("Open a PDF file","Highlight the title", "Copy the highlight part (Ctrl+C)","Paste to Untitiled.txt","Close the PDF file","Null");
+            newSettings.Show();
+            newSettings.Activate();
+            newSettings.Focus();
+            newSettings.Topmost = true;
+        }
     }
 
 }
