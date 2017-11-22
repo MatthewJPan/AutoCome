@@ -29,13 +29,13 @@ namespace AutoComeV1
             InitializeComponent();
             
             showMenu("A4.pdf");
-            for (int i = 0; i < 20; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    operations[i,j] = "Null";
-                }
-            }
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    for (int j = 0; j < 2; j++)
+            //    {
+            //        operations[i,j] = "Null";
+            //    }
+            //}
             //operations = passedOperations;
         }
        
@@ -45,6 +45,7 @@ namespace AutoComeV1
         private void DoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (e.Source == button0) {
+                addToOperationList("Open PDF File", "A0.pdf");
                 PDF pdf = new PDF(0, operations);
                 pdf.Check += value => operations = value;
 
@@ -52,98 +53,136 @@ namespace AutoComeV1
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File","A1.pdf");
+                
+                
             } 
             else if (e.Source == button1)
             {
+                addToOperationList("Open PDF File", "A1.pdf");
                 PDF pdf = new PDF(1, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A2.pdf");
+                
             }
             else if (e.Source == button2)
             {
+                addToOperationList("Open PDF File", "A2.pdf");
                 PDF pdf = new PDF(2, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A3.pdf");
+                
             }
             else if (e.Source == button3)
             {
+                addToOperationList("Open PDF File", "A3.pdf");
                 PDF pdf = new PDF(3, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A4.pdf");
+                
             }
             else if (e.Source == button4)
             {
+                addToOperationList("Open PDF File", "A4.pdf");
                 PDF pdf = new PDF(4, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A5.pdf");
+                
             }
             else if (e.Source == button5)
             {
+                addToOperationList("Open PDF File", "A5.pdf");
                 PDF pdf = new PDF(5, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A6.pdf");
+                
             }
 
             else if (e.Source == button6)
             {
+                addToOperationList("Open PDF File", "A6.pdf");
                 PDF pdf = new PDF(6, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A7.pdf");
+                
             }
             else if (e.Source == button7)
             {
+                addToOperationList("Open PDF File", "A7.pdf");
                 PDF pdf = new PDF(7, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A8.pdf");
+                
             }
             else if (e.Source == button8)
             {
+                addToOperationList("Open PDF File", "A8.pdf");
                 PDF pdf = new PDF(8, operations);
+                pdf.Check += value => operations = value;
                 pdf.Show();
                 pdf.Activate();
                 pdf.Focus();
                 pdf.Topmost = true;
+                
+            }
+            else if (e.Source == button9)
+            {
                 addToOperationList("Open PDF File", "A9.pdf");
+                PDF pdf = new PDF(9, operations);
+                pdf.Check += value => operations = value;
+                pdf.Show();
+                pdf.Activate();
+                pdf.Focus();
+                pdf.Topmost = true;
+                
             }
             else 
             {
-                PDF pdf = new PDF(9, operations);
-                pdf.Show();
-                pdf.Activate();
-                pdf.Focus();
-                pdf.Topmost = true;
-                addToOperationList("Open PDF File", "A10.pdf");
+                addToOperationList("Open TXT File", "Untitiled.txt");
+                Text txt = new Text();
+                String newOperationTXT = "";
+                txt.TXTcheck += value => newOperationTXT = value;
+                addToOperationList("Paste", "Untitiled.txt");
+                txt.Show();
+                txt.Activate();
+                txt.Focus();
+                txt.Topmost = true;
+                
             }
-
             for (int i = 0; i < 20; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    Console.WriteLine(operations[i, j]);
+                    if (operations[i, j] != "Null")
+                    {
+                        Console.Write(operations[i, j]);
+
+                    }
+
+
                 }
             }
+            Console.WriteLine();
             //back0.Fill = Brushes.Black;
             //PDF pdf = new PDF();
             //pdf.Show();
@@ -186,6 +225,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button1)
@@ -207,6 +247,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button2)
@@ -228,6 +269,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button3)
@@ -249,6 +291,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button4)
@@ -270,6 +313,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button5)
@@ -291,6 +335,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button6)
@@ -312,6 +357,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button7)
@@ -333,6 +379,7 @@ namespace AutoComeV1
                     back7.Fill = selectBrush;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
 
@@ -355,6 +402,7 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = selectBrush;
                     back9.Fill = Brushes.Transparent;
+                    back10.Fill = Brushes.Transparent;
                 }
             }
             else if (e.Source == button9)
@@ -376,8 +424,32 @@ namespace AutoComeV1
                     back7.Fill = Brushes.Transparent;
                     back8.Fill = Brushes.Transparent;
                     back9.Fill = selectBrush;
+                    back10.Fill = Brushes.Transparent;
                 }
                 
+            }
+            else if (e.Source == button10)
+            {
+                if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+                {
+                    back10.Fill = selectBrush;
+                    addToOperationList("Select", "Untitled.pdf");
+                }
+                else
+                {
+                    back0.Fill = Brushes.Transparent;
+                    back1.Fill = Brushes.Transparent;
+                    back2.Fill = Brushes.Transparent;
+                    back3.Fill = Brushes.Transparent;
+                    back4.Fill = Brushes.Transparent;
+                    back5.Fill = Brushes.Transparent;
+                    back6.Fill = Brushes.Transparent;
+                    back7.Fill = Brushes.Transparent;
+                    back8.Fill = Brushes.Transparent;
+                    back9.Fill = Brushes.Transparent;
+                    back10.Fill = selectBrush;
+                }
+
             }
             else
             {
@@ -392,16 +464,24 @@ namespace AutoComeV1
                 back7.Fill = Brushes.Transparent;
                 back8.Fill = Brushes.Transparent;
                 back9.Fill = Brushes.Transparent;
+                back10.Fill = Brushes.Transparent;
             }
 
             for (int i = 0; i < 20; i++)
             {
-                for (int j=0;j<2;j++)
+                for (int j = 0; j < 2; j++)
                 {
-                    Console.WriteLine(operations[i,j]);
+                    if (operations[i, j] != "Null")
+                    {
+                        Console.Write(operations[i, j]);
+
+                    }
+
+
                 }
             }
-            
+            Console.WriteLine();
+
         }
 
         private void ApplyClick(object sender, RoutedEventArgs e)

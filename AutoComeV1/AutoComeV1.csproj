@@ -60,6 +60,9 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Text.xaml.cs">
+      <DependentUpon>Text.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowEventArgs.cs" />
     <Page Include="Information.xaml">
       <SubType>Designer</SubType>
@@ -82,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Text.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +143,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pictures\progress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\notepad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\notepadIcon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

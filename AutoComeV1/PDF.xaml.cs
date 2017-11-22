@@ -34,8 +34,11 @@ namespace AutoComeV1
                 for (int j = 0; j < 2; j++)
                 {
                     operations[i, j] = passedOperations[i,j];
+                    Console.Write(operations[i, j]);
+                    
                 }
             }
+            Console.WriteLine();
             //title.Text = passedOperations[19,1];
             this.Activate();
             fileTitle.Text = ("A"+source.ToString()+".pdf");
@@ -330,7 +333,7 @@ namespace AutoComeV1
 
         private void CtrlDown(object sender, KeyEventArgs e)
         {
-            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.C)
+            if (Keyboard.Modifiers == ModifierKeys.Control|| e.Key == Key.C)
             {
 
                 if (title.SelectedText != null)
@@ -350,17 +353,24 @@ namespace AutoComeV1
                     addToOperationList("Copy", "content1");
                 }
             }
-            else if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.V)
-            {
-                addToOperationList("Paste to", "test.txt");
-            }
+            //else if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.V)
+            //{
+            //    addToOperationList("Paste to", "test.txt");
+            //}
             for (int i = 0; i < 20; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    Console.WriteLine(operations[i, j]);
+                    if(operations[i, j]!="Null")
+                    {
+                        Console.Write(operations[i, j]);
+
+                    }
+                    
+                    
                 }
             }
+            Console.WriteLine();
         }
 
         private void PDF_Closed(object sender, EventArgs e)

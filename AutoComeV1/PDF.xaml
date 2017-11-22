@@ -10,7 +10,7 @@
         <ImageBrush ImageSource="pictures/pdfEmpty.jpg"/>
     </Window.Background>
     <Grid>
-        <TextBox x:Name="title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" Margin="23,127,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Width="546" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" />
+        <TextBox x:Name="title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" Margin="23,127,0,0" TextWrapping="Wrap" Text="Title" IsReadOnly="True" VerticalAlignment="Top" Width="546" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" />
         <TextBox x:Name="_abstract" HorizontalAlignment="Left" Height="130" Margin="23,243,0,0" TextWrapping="Wrap" Text="abstract " VerticalAlignment="Top" Width="264" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0"  KeyDown="CtrlDown"/>
         <TextBox x:Name="content1" HorizontalAlignment="Left" Height="246" Margin="287,223,0,0" TextWrapping="Wrap" Text="Content " VerticalAlignment="Top" Width="282" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown"/>
         <TextBox x:Name="content0" HorizontalAlignment="Left" Height="73" Margin="23,393,0,0" TextWrapping="Wrap" Text="content0" VerticalAlignment="Top" Width="264" FontSize="11"  Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown"/>

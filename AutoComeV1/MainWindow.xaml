@@ -35,6 +35,8 @@
             <TextBox x:Name="PDFname8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="10,280,0,0" TextWrapping="Wrap" Text="A8.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
             <Image x:Name="PDFicon9" HorizontalAlignment="Left" Height="100" Margin="160,180,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
             <TextBox x:Name="PDFname9" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="160,280,0,0" TextWrapping="Wrap" Text="A9.pdf" VerticalAlignment="Top" Width="100" FontSize="18" BorderBrush="{x:Null}"/>
+            <Image x:Name="TXTicon" HorizontalAlignment="Left" Height="100" Margin="310,180,0,0" VerticalAlignment="Top" Width="100" Source="pictures/notepadIcon.jpg"/>
+            <TextBox x:Name="TXTname" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="310,280,0,0" TextWrapping="Wrap" Text="Untitiled.txt" VerticalAlignment="Top" Width="110" FontSize="18" BorderBrush="{x:Null}"/>
 
         </Grid>
         <Rectangle x:Name="back0" HorizontalAlignment="Left" Height="130" Margin="287,168,0,0" VerticalAlignment="Top" Width="100"/>
@@ -47,6 +49,7 @@
         <Rectangle x:Name="back7" HorizontalAlignment="Left" Height="130" Margin="1328,168,0,0" VerticalAlignment="Top" Width="100"/>
         <Rectangle x:Name="back8" HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="100"/>
         <Rectangle x:Name="back9" HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="100"/>
+        <Rectangle x:Name="back10" HorizontalAlignment="Left" Height="130" Margin="590,321,0,0" VerticalAlignment="Top" Width="100"/>
 
         <Button Content=" " HorizontalAlignment="Left" Height="668" Margin="263,123,0,0" VerticalAlignment="Top" Width="1331" Background="Transparent" BorderBrush="Transparent" Opacity="0" Click="Click" FontWeight="Bold"/>
 
@@ -60,7 +63,8 @@
         <Button x:Name="button7" Content=" " HorizontalAlignment="Left" Height="130" Margin="1328,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
         <Button x:Name="button8" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
         <Button x:Name="button9" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-      
+        <Button x:Name="button10" Content=" " HorizontalAlignment="Left" Height="130" Margin="590,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+
         <Button x:Name="operateButton" Content="Apply to All" HorizontalAlignment="Left" Margin="590,303,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="ApplyClick">
             <Button.Background>
                 <RadialGradientBrush>
