@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace AutoComeV1
 {
     /// <summary>
@@ -24,36 +27,48 @@ namespace AutoComeV1
         Brush selectBrush;
         //SolidColorBrush selectBrush = new SolidColorBrush(Color.FromArgb(100, 0, 176, 240));
         SolidColorBrush unSelectBrush = new SolidColorBrush(Color.FromArgb(100, 208, 208, 208));
+        Text txt;
+        String[] steps;
+        ArrayList files = new ArrayList();
+        ArrayList content = new ArrayList();
+       
 
-        public Settings(String step1string, String step2string, String step3string, String step4string, String step5string, String step6string)
+        public Settings(String [] predictedSteps, int predictedStart, int difference, Text TXTwindow)
         {
             InitializeComponent();
             progressing.Visibility = Visibility.Hidden;
             selectBrush = step1.Background;
-            step1.Content = "Step1." + step1string;
-            step2.Content = "Step2." + step2string;
-            step3.Content = "Step3." + step3string;
-            step4.Content = "Step4." + step4string;
-            step5.Content = "Step5." + step5string;
-            step6.Content = "Step6." + step6string;
+            steps = predictedSteps;
+            step1.Content = "Step1." + steps[0];
+            step2.Content = "Step2." + steps[1];
+            step3.Content = "Step3." + steps[2];
+            step4.Content = "Step4." + steps[3];
+            step5.Content = "Step5." + steps[4];
+            step6.Content = "Step6." + steps[5];
+            txt = TXTwindow;
 
-            if (step6string == "Null")
+            for (int i = 0; (predictedStart+i * difference) < 10; i++)
+            {
+                files.Add(predictedStart + i * difference);
+            }
+
+            if (steps[5] == "Null")
             {
                 step6.Visibility = Visibility.Hidden;
                 step6.IsEnabled = false;
-                if (step5string == "Null")
+                if (steps[4] == "Null")
                 {
                     step5.Visibility = Visibility.Hidden;
                     step5.IsEnabled = false;
-                    if (step4string == "Null")
+                    if (steps[3] == "Null")
                     {
                         step4.Visibility = Visibility.Hidden;
                         step4.IsEnabled = false;
-                        if (step3string == "Null")
+                        if (steps[2] == "Null")
                         {
                             step3.Visibility = Visibility.Hidden;
                             step3.IsEnabled = false;
-                            if (step2string == "Null")
+                            if (steps[1] == "Null")
                             {
                                 step2.Visibility = Visibility.Hidden;
                                 step2.IsEnabled = false;
@@ -96,14 +111,34 @@ namespace AutoComeV1
             step6.IsEnabled = false;
             operateButton.IsEnabled = false;
 
-            //TO-DO:add a pause 
-            //Task.Factory.StartNew(() =>
-            //{
-                
-
-            //});
-
-            //await Task.Delay(1000);
+            
+            for (int i = 0; i < 6; i++)
+            {
+                if (stepFlag[i] == true)
+                {
+                    if (steps[i].Contains("title"))
+                    {
+                        //titleFlag  = true;
+                        content.Add("title");
+                    }
+                    if (steps[i].Contains("abstract"))
+                    {
+                        //abstractFlag = true;
+                        content.Add("abstract");
+                    }
+                    if (steps[i].Contains("content0"))
+                    {
+                        //content0Flag = true;
+                        content.Add("content0");
+                    }
+                    if (steps[i].Contains("content1"))
+                    {
+                        //content1Flag = true;
+                        content.Add("content1");
+                    }
+                }
+               
+            }
             Thread t = new Thread(() =>
             {
                 Thread.Sleep(1000);//次线程休眠1秒
@@ -119,6 +154,25 @@ namespace AutoComeV1
                 }));
             });
             t.Start();
+
+            String oldContent = "";
+            txt.TXTcontent += value => oldContent = value;
+            txt.Close();
+            Text autoTXT = new Text(files, content,oldContent);
+            autoTXT.Show();
+            autoTXT.Activate();
+            autoTXT.Focus();
+            autoTXT.Topmost = true;
+
+            //TO-DO:add a pause 
+            //Task.Factory.StartNew(() =>
+            //{
+
+
+            //});
+
+            //await Task.Delay(1000);
+            
         }
 
 
@@ -130,6 +184,7 @@ namespace AutoComeV1
                 {
                     stepFlag[0] = false;
                     step1.Background = unSelectBrush;
+                    
                 }
                 else
                 {
@@ -209,5 +264,7 @@ namespace AutoComeV1
 
             }
         }
+
+     
     }
 }

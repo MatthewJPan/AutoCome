@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,33 @@ namespace AutoComeV1
     public partial class Text : Window
     {
         public event Action<String> TXTcheck;
+        public event Action<String> TXTcontent;
         //String test = "test";
+        //ArrayList files = new ArrayList();
+        //ArrayList content = new ArrayList();
         public Text()
         {
             InitializeComponent();
         }
+        public Text(ArrayList files, ArrayList types, String oldText)
+        {
+            InitializeComponent();
 
+            String Content = oldText;
+            Console.WriteLine("!old!" + Content);
+            for (int i = 0; i < files.Count; i++)
+            {
+                for (int j = 0; j < types.Count; j++)
+                {
+                    int file = (int)files[i];
+                    String type = (String)types[j];
+                    Console.WriteLine(file+"  "+type);
+                    Content = Content + "\r\n" + getText(file, type);
+                    Console.WriteLine("!"+Content);
+                }
+            }
+            content.Text = Content;
+        }
         private void CtrlDown(object sender, KeyEventArgs e)
         {
             if (Keyboard.Modifiers == ModifierKeys.Control || e.Key == Key.V)
@@ -81,11 +103,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test2title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test2abstract";
                 }
                 else if (location == "content0")
                 {
@@ -100,11 +122,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test3title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test3abstract";
                 }
                 else if (location == "content0")
                 {
@@ -119,11 +141,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test4title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test2abstract";
                 }
                 else if (location == "content0")
                 {
@@ -230,6 +252,12 @@ namespace AutoComeV1
                 }
             }
             return content;
+        }
+
+        private void onClosed(object sender, EventArgs e)
+        {
+            String currentContent = content.Text;
+            TXTcontent(currentContent);
         }
     }
 }

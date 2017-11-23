@@ -166,11 +166,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test2title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test2abstract";
                 }
                 else if (location == "content0")
                 {
@@ -185,11 +185,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test3title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test3abstract";
                 }
                 else if (location == "content0")
                 {
@@ -204,11 +204,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test4title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test4abstract";
                 }
                 else if (location == "content0")
                 {
@@ -223,11 +223,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test5title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test5abstract";
                 }
                 else if (location == "content0")
                 {
@@ -316,6 +316,7 @@ namespace AutoComeV1
             }
             return content;
         }
+
 
         private void addToOperationList(String newOperaton, String newTarget)
         {

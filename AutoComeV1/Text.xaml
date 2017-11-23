@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
         mc:Ignorable="d"
-        Title="Text" Height="400" Width="650">
+        Title="Text" Height="400" Width="650" Closed="onClosed">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="pictures/notepad.jpg"/>

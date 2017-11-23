@@ -64,6 +64,7 @@
       <DependentUpon>Text.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowEventArgs.cs" />
+    <Compile Include="WindowHelper.cs" />
     <Page Include="Information.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

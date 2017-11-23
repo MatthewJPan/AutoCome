@@ -28,6 +28,9 @@ namespace AutoComeV1
         String newOperationTXT = "";
         String subOperation = "";
         String subTarget = " ";
+        int predictedStart = 0;
+        int difference = 0;
+        Text txt;
 
         public MainWindow()
         {
@@ -196,7 +199,7 @@ namespace AutoComeV1
             else 
             {
                 addToOperationList("Open TXT File", "Untitiled");
-                Text txt = new Text();
+                txt = new Text();
 
                 txt.TXTcheck += value => newOperationTXT = value;
 
@@ -531,7 +534,7 @@ namespace AutoComeV1
         private void SettingClick(object sender, RoutedEventArgs e)
         {
             //TO-DO: create instence based on the list of actions detected.
-            Settings newSettings = new Settings(steps[0], steps[1], steps[2], steps[3], steps[4], steps[5]);
+            Settings newSettings = new Settings(steps,predictedStart,difference, txt);
             newSettings.Show();
             newSettings.Activate();
             newSettings.Focus();
@@ -569,6 +572,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
 
 
             }
@@ -587,6 +592,9 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
+
             }
             else if (predictTarget ==2)
             {
@@ -603,6 +611,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget ==3)
             {
@@ -619,6 +629,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 4)
             {
@@ -635,6 +647,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 5)
             {
@@ -651,6 +665,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 6)
             {
@@ -667,6 +683,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 7)
             {
@@ -683,6 +701,8 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget ==8)
             {
@@ -699,6 +719,8 @@ namespace AutoComeV1
                 active0.Fill = Brushes.Transparent;
                 active9.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 9)
             {
@@ -715,26 +737,36 @@ namespace AutoComeV1
                 active8.Fill = Brushes.Transparent;
                 active0.Fill = Brushes.Transparent;
                 active10.Fill = Brushes.Transparent;
+                operateButton.Visibility = Visibility.Visible;
+                settingButton.Visibility = Visibility.Visible;
             }
 
         }
 
         private void MainActivated(object sender, EventArgs e)
         {
+            Boolean flag1 = false;
+            Boolean flag2 = false;
             if (subOperation != " " && subOperation != " ")
             {
                 addToOperationList(subOperation, subTarget);
                 subOperation = " ";
                 subOperation = " ";
+                flag1 = true;
 
             }
             if (newOperationTXT!=" ")
             {
                 addToOperationList(newOperationTXT, "Untitiled.txt");
                 newOperationTXT = " ";
+                flag2 = true;
             }
 
-            CheckPattern();
+            if (flag1==true||flag2==true)
+            {
+                CheckPattern();
+            }
+                
             //Console.WriteLine(newOperationTXT);
             for (int i = 0; i < 20; i++)
             {
@@ -755,7 +787,8 @@ namespace AutoComeV1
         private void CheckPattern()
         {
             Boolean operationFlag = false;
-            int difference = 0;
+            difference = 0;
+            predictedStart = 0;
             int largestStep = 0;
             for (int i = 6; i >1; i--) {
                 for (int j = 0; j< i; j++)
@@ -765,7 +798,8 @@ namespace AutoComeV1
                         operationFlag = true;
                         if (operations[19 - j, 0] == "Open PDF File A")
                         {
-                            difference = int.Parse(operations[19 - j, 1])+int.Parse(operations[19 - j, 1]) - int.Parse(operations[19 -i -j, 1]);
+                            difference = int.Parse(operations[19 - j, 1]) - int.Parse(operations[19 -i -j, 1]);
+                            predictedStart = int.Parse(operations[19 - j, 1]) + difference;
                         }    
                     }
                     else
@@ -795,7 +829,8 @@ namespace AutoComeV1
                     {
                         steps[y] = "Null";
                     }
-                    showMenu(difference);
+                    showMenu(predictedStart);
+
                     //unselectButton.IsEnabled = false;
                     break;
                 }
