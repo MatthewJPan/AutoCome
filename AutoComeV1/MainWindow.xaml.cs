@@ -23,7 +23,7 @@ namespace AutoComeV1
     public partial class MainWindow : Window
     {
         //int i = 0;
-        String[,] operations = new String[20, 2];
+        //String[,] operations = new String[20, 2];
         String[] steps = new String[6];
         String newOperationTXT = "";
         String subOperation = "";
@@ -31,6 +31,7 @@ namespace AutoComeV1
         int predictedStart = 0;
         int difference = 0;
         Text txt;
+        Boolean SettingsIsOpened = false;
 
         public MainWindow()
         {
@@ -55,11 +56,11 @@ namespace AutoComeV1
         private void DoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (e.Source == button0) {
-                addToOperationList("Open PDF File A", "0");
-                PDF pdf = new PDF(0, operations);
+                Record.addToOperationList("Open PDF File A", "0");
+                PDF pdf = new PDF(0);
                
-                pdf.Check += value => subOperation=value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation=value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
 
                 pdf.Show();
@@ -71,11 +72,11 @@ namespace AutoComeV1
             } 
             else if (e.Source == button1)
             {
-                addToOperationList("Open PDF File A", "1");
-                PDF pdf = new PDF(1, operations);
+                Record.addToOperationList("Open PDF File A", "1");
+                PDF pdf = new PDF(1);
              
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -85,11 +86,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button2)
             {
-                addToOperationList("Open PDF File A", "2");
-                PDF pdf = new PDF(2, operations);
+                Record.addToOperationList("Open PDF File A", "2");
+                PDF pdf = new PDF(2);
                
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -99,11 +100,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button3)
             {
-                addToOperationList("Open PDF File A", "3");
-                PDF pdf = new PDF(3, operations);
+                Record.addToOperationList("Open PDF File A", "3");
+                PDF pdf = new PDF(3);
             
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -113,11 +114,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button4)
             {
-                addToOperationList("Open PDF File A", "4");
-                PDF pdf = new PDF(4, operations);
+                Record.addToOperationList("Open PDF File A", "4");
+                PDF pdf = new PDF(4);
              
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -127,11 +128,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button5)
             {
-                addToOperationList("Open PDF File A", "5");
-                PDF pdf = new PDF(5, operations);
+                Record.addToOperationList("Open PDF File A", "5");
+                PDF pdf = new PDF(5);
          
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -142,11 +143,11 @@ namespace AutoComeV1
 
             else if (e.Source == button6)
             {
-                addToOperationList("Open PDF File A", "6");
-                PDF pdf = new PDF(6, operations);
+                Record.addToOperationList("Open PDF File A", "6");
+                PDF pdf = new PDF(6);
              
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -156,11 +157,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button7)
             {
-                addToOperationList("Open PDF File A", "7");
-                PDF pdf = new PDF(7, operations);
+                Record.addToOperationList("Open PDF File A", "7");
+                PDF pdf = new PDF(7);
         
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -170,11 +171,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button8)
             {
-                addToOperationList("Open PDF File A", "8");
-                PDF pdf = new PDF(8, operations);
+                Record.addToOperationList("Open PDF File A", "8");
+                PDF pdf = new PDF(8);
           
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -184,11 +185,11 @@ namespace AutoComeV1
             }
             else if (e.Source == button9)
             {
-                addToOperationList("Open PDF File A", "9");
-                PDF pdf = new PDF(9, operations);
+                Record.addToOperationList("Open PDF File A", "9");
+                PDF pdf = new PDF(9);
          
-                pdf.Check += value => subOperation = value;
-                pdf.CheckTarget += value => subTarget = value;
+                //pdf.Check += value => subOperation = value;
+                //pdf.CheckTarget += value => subTarget = value;
                 //addToOperationList(subOperation, subTarget);
                 pdf.Show();
                 pdf.Activate();
@@ -198,10 +199,10 @@ namespace AutoComeV1
             }
             else 
             {
-                addToOperationList("Open TXT File", "Untitiled");
+                Record.addToOperationList("Open TXT File", "Untitiled");
                 txt = new Text();
 
-                txt.TXTcheck += value => newOperationTXT = value;
+                //txt.TXTcheck += value => newOperationTXT = value;
 
                 //Console.WriteLine("******"+newOperationTXT);
                 txt.Show();
@@ -253,7 +254,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back0.Fill = selectBrush;
-                    addToOperationList("Select", "A1.pdf");
+                    Record.addToOperationList("Select", "A1.pdf");
                 }
                 else
                 {
@@ -275,7 +276,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back1.Fill = selectBrush;
-                    addToOperationList("Select", "A2.pdf");
+                    Record.addToOperationList("Select", "A2.pdf");
                 }
                 else
                 {
@@ -297,7 +298,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back2.Fill = selectBrush;
-                    addToOperationList("Select", "A3.pdf");
+                    Record.addToOperationList("Select", "A3.pdf");
                 }
                 else
                 {
@@ -319,7 +320,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back3.Fill = selectBrush;
-                    addToOperationList("Select", "A4.pdf");
+                    Record.addToOperationList("Select", "A4.pdf");
                 }
                 else
                 {
@@ -341,7 +342,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back4.Fill = selectBrush;
-                    addToOperationList("Select", "A5.pdf");
+                    Record.addToOperationList("Select", "A5.pdf");
                 }
                 else
                 {
@@ -363,7 +364,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back5.Fill = selectBrush;
-                    addToOperationList("Select", "A6.pdf");
+                    Record.addToOperationList("Select", "A6.pdf");
                 }
                 else
                 {
@@ -385,7 +386,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back6.Fill = selectBrush;
-                    addToOperationList("Select", "A7.pdf");
+                    Record.addToOperationList("Select", "A7.pdf");
                 }
                 else
                 {
@@ -407,7 +408,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back7.Fill = selectBrush;
-                    addToOperationList("Select", "A8.pdf");
+                    Record.addToOperationList("Select", "A8.pdf");
                 }
                 else
                 {
@@ -430,7 +431,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back8.Fill = selectBrush;
-                    addToOperationList("Select", "A9.pdf");
+                    Record.addToOperationList("Select", "A9.pdf");
                 }
                 else
                 {
@@ -452,7 +453,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back9.Fill = selectBrush;
-                    addToOperationList("Select", "A10.pdf");
+                    Record.addToOperationList("Select", "A10.pdf");
                 }
                 else
                 {
@@ -475,7 +476,7 @@ namespace AutoComeV1
                 if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
                 {
                     back10.Fill = selectBrush;
-                    addToOperationList("Select", "Untitled.pdf");
+                    Record.addToOperationList("Select", "Untitled.pdf");
                 }
                 else
                 {
@@ -495,7 +496,7 @@ namespace AutoComeV1
             }
             else
             {
-                addToOperationList("Unselect", "All");
+                Record.addToOperationList("Unselect", "All");
                 back0.Fill = Brushes.Transparent;
                 back1.Fill = Brushes.Transparent;
                 back2.Fill = Brushes.Transparent;
@@ -535,25 +536,26 @@ namespace AutoComeV1
         {
             //TO-DO: create instence based on the list of actions detected.
             Settings newSettings = new Settings(steps,predictedStart,difference, txt);
+            //newSettings.Settingscheck += value => SettingsIsOpened = value;
             newSettings.Show();
             newSettings.Activate();
             newSettings.Focus();
             newSettings.Topmost = true;
         }
 
-        private void addToOperationList(String newOperaton, String newTarget)
-        {
-            for (int i = 0; i < 19; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    operations[i,j] = operations[i + 1,j];
-                }
+        //private void addToOperationList(String newOperaton, String newTarget)
+        //{
+        //    for (int i = 0; i < 19; i++)
+        //    {
+        //        for (int j = 0; j < 2; j++)
+        //        {
+        //            operations[i,j] = operations[i + 1,j];
+        //        }
                 
-            }
-            operations[19,0] = newOperaton;
-            operations[19, 1] = newTarget;
-        }
+        //    }
+        //    operations[19,0] = newOperaton;
+        //    operations[19, 1] = newTarget;
+        //}
 
         private void showMenu(int predictTarget)
         {
@@ -745,36 +747,38 @@ namespace AutoComeV1
 
         private void MainActivated(object sender, EventArgs e)
         {
-            Boolean flag1 = false;
-            Boolean flag2 = false;
-            if (subOperation != " " && subOperation != " ")
-            {
-                addToOperationList(subOperation, subTarget);
-                subOperation = " ";
-                subOperation = " ";
-                flag1 = true;
+            //Boolean flag1 = false;
+            //Boolean flag2 = false;
+            //if (subOperation != " " && subOperation != " ")
+            //{
+            //    Record.addToOperationList(subOperation, subTarget);
+            //    subOperation = " ";
+            //    subOperation = " ";
+            //    flag1 = true;
 
-            }
-            if (newOperationTXT!=" ")
-            {
-                addToOperationList(newOperationTXT, "Untitiled.txt");
-                newOperationTXT = " ";
-                flag2 = true;
-            }
+            //}
+            //if (newOperationTXT!=" ")
+            //{
+            //    Record.addToOperationList(newOperationTXT, "Untitiled.txt");
+            //    newOperationTXT = " ";
+            //    flag2 = true;
+            //}
 
-            if (flag1==true||flag2==true)
-            {
-                CheckPattern();
-            }
-                
+            //if (flag1==true||flag2==true)
+            //{
+            //    CheckPattern();
+            //}
+
             //Console.WriteLine(newOperationTXT);
+            
+
             for (int i = 0; i < 20; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    if (operations[i, j] != "Null")
+                    if (Record.operations[i, j] != "Null")
                     {
-                        Console.Write(operations[i, j]+"; ");
+                        Console.Write(Record.operations[i, j]+"; ");
 
                     }
 
@@ -782,6 +786,10 @@ namespace AutoComeV1
                 }
             }
             Console.WriteLine();
+            //if (SettingsIsOpened == false)
+            //{
+            //}
+            CheckPattern();
         }
 
         private void CheckPattern()
@@ -793,13 +801,13 @@ namespace AutoComeV1
             for (int i = 6; i >1; i--) {
                 for (int j = 0; j< i; j++)
                 {
-                    if (operations[19 - j, 0] == operations[19 - i - j, 0])
+                    if (Record.operations[19 - j, 0] == Record.operations[19 - i - j, 0])
                     {
                         operationFlag = true;
-                        if (operations[19 - j, 0] == "Open PDF File A")
+                        if (Record.operations[19 - j, 0] == "Open PDF File A")
                         {
-                            difference = int.Parse(operations[19 - j, 1]) - int.Parse(operations[19 -i -j, 1]);
-                            predictedStart = int.Parse(operations[19 - j, 1]) + difference;
+                            difference = int.Parse(Record.operations[19 - j, 1]) - int.Parse(Record.operations[19 -i -j, 1]);
+                            predictedStart = int.Parse(Record.operations[19 - j, 1]) + difference;
                         }    
                     }
                     else
@@ -815,13 +823,13 @@ namespace AutoComeV1
                     Console.WriteLine(difference + "***" );
                     for (int x = 0; x < largestStep-1; x++)
                     {
-                        if (Regex.IsMatch(operations[19 - x, 1], @"^[+-]?\d*$"))
+                        if (Regex.IsMatch(Record.operations[19 - x, 1], @"^[+-]?\d*$"))
                         {
-                            steps[largestStep-2-x] = operations[19 - x, 0] + " "+"file";
+                            steps[largestStep-2-x] = Record.operations[19 - x, 0] + " "+"file";
                         }
                         else
                         {
-                            steps[largestStep-2-x] = operations[19 - x, 0] + " " + operations[19 - x, 1];
+                            steps[largestStep-2-x] = Record.operations[19 - x, 0] + " " + Record.operations[19 - x, 1];
                         }
                         
                     }

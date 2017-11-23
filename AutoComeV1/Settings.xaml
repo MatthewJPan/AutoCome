@@ -60,7 +60,19 @@
                 <RotateTransform x:Name="xRotate2" Angle="0" />
             </Image.RenderTransform>
         </Image>
+        <Button x:Name="chooseButton1" Content="Choose Files" HorizontalAlignment="Left" Margin="336,83,0,0" VerticalAlignment="Top" Width="78" Height="26" Click="ChooseButtonClick" Background="#FF73ECFF" />
+        <TextBlock x:Name="files1" HorizontalAlignment="Left" Height="23" Margin="336,60,0,0" TextWrapping="Wrap" Text="Files" VerticalAlignment="Top" Width="78" Background="White"/>
 
+        <Button x:Name="chooseButton2" Content="Choose Files" HorizontalAlignment="Left" Margin="336,138,0,0" VerticalAlignment="Top" Width="78" Height="26" Click="ChooseButtonClick" Background="#FF73ECFF" />
+        <TextBlock x:Name="files2" HorizontalAlignment="Left" Height="23" Margin="336,115,0,0" TextWrapping="Wrap" Text="Files" VerticalAlignment="Top" Width="78" Background="White"/>
+        <Button x:Name="chooseButton3" Content="Choose Files" HorizontalAlignment="Left" Margin="336,193,0,0" VerticalAlignment="Top" Width="78" Height="26" Click="ChooseButtonClick" Background="#FF73ECFF" />
+        <TextBlock x:Name="files3" HorizontalAlignment="Left" Height="23" Margin="336,170,0,0" TextWrapping="Wrap" Text="Files" VerticalAlignment="Top" Width="78" Background="White"/>
+        <Button x:Name="chooseButton4" Content="Choose Files" HorizontalAlignment="Left" Margin="336,248,0,0" VerticalAlignment="Top" Width="78" Height="26" Click="ChooseButtonClick" Background="#FF73ECFF" />
+        <TextBlock x:Name="files4" HorizontalAlignment="Left" Height="23" Margin="336,225,0,0" TextWrapping="Wrap" Text="Files" VerticalAlignment="Top" Width="78" Background="White"/>
+        <Button x:Name="chooseButton5" Content="Choose Files" HorizontalAlignment="Left" Margin="336,303,0,0" VerticalAlignment="Top" Width="78" Height="26" Click="ChooseButtonClick" Background="#FF73ECFF" />
+        <TextBlock x:Name="files5" HorizontalAlignment="Left" Height="23" Margin="336,280,0,0" TextWrapping="Wrap" Text="Files" VerticalAlignment="Top" Width="78" Background="White"/>
+        <Button x:Name="chooseButton6" Content="Choose Files" HorizontalAlignment="Left" Margin="336,358,0,0" VerticalAlignment="Top" Width="78" Height="26" Click="ChooseButtonClick" Background="#FF73ECFF" />
+        <TextBlock x:Name="files6" HorizontalAlignment="Left" Height="23" Margin="336,335,0,0" TextWrapping="Wrap" Text="Files" VerticalAlignment="Top" Width="78" Background="White"/>
 
     </Grid>
 </Window>

@@ -20,13 +20,14 @@ namespace AutoComeV1
     /// </summary>
     public partial class PDF : Window
     {
-        String[,] operations = new String[20, 2];
-        public event Action<String> Check;
-        public event Action<String> CheckTarget;
+        //FString[,] operations = new String[20, 2];
+        //public event Action<String> Check;
+        //public event Action<String> CheckTarget;
 
         //public event EventHandler<WindowEventArgs> DialogFinished;
 
-        public PDF(int source, String[,] passedOperations)
+        public PDF(int source)
+        //String[,] passedOperations
         {
             InitializeComponent();
             //operations = passedOperations;
@@ -318,19 +319,19 @@ namespace AutoComeV1
         }
 
 
-        private void addToOperationList(String newOperaton, String newTarget)
-        {
-            for (int i = 0; i < 19; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    operations[i, j] = operations[i + 1, j];
-                }
+        //private void addToOperationList(String newOperaton, String newTarget)
+        //{
+        //    for (int i = 0; i < 19; i++)
+        //    {
+        //        for (int j = 0; j < 2; j++)
+        //        {
+        //            operations[i, j] = operations[i + 1, j];
+        //        }
 
-            }
-            operations[19, 0] = newOperaton;
-            operations[19, 1] = newTarget;
-        }
+        //    }
+        //    operations[19, 0] = newOperaton;
+        //    operations[19, 1] = newTarget;
+        //}
 
         
 
@@ -341,28 +342,28 @@ namespace AutoComeV1
 
                 if (title.SelectedText != "")
                 {
-                    //addToOperationList("Copy", "title");
-                    Check("Copy");
-                    CheckTarget("title");
+                    Record.addToOperationList("Copy", "title");
+                    //Check("Copy");
+                    //CheckTarget("title");
 
                 }
                 else if (_abstract.SelectedText != "")
                 {
-                    //addToOperationList("Copy", "abstract");
-                    Check("Copy");
-                    CheckTarget("abstract");
+                    Record.addToOperationList("Copy", "abstract");
+                    //Check("Copy");
+                    //CheckTarget("abstract");
                 }
                 else if (content0.SelectedText != "")
                 {
-                    //addToOperationList("Copy", "content0");
-                    Check("Copy");
-                    CheckTarget("content0");
+                    Record.addToOperationList("Copy", "content0");
+                    //Check("Copy");
+                    //CheckTarget("content0");
                 }
                 else if (content1.SelectedText != "")
                 {
-                    //addToOperationList("Copy", "content1");
-                    Check("Copy");
-                    CheckTarget("content1");
+                    Record.addToOperationList("Copy", "content1");
+                    //Check("Copy");
+                    //CheckTarget("content1");
                 }
             }
             //else if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.V)

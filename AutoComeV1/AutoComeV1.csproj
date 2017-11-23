@@ -54,9 +54,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChooseFiles.xaml.cs">
+      <DependentUpon>ChooseFiles.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Information.xaml.cs">
       <DependentUpon>Information.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Record.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -65,6 +69,10 @@
     </Compile>
     <Compile Include="WindowEventArgs.cs" />
     <Compile Include="WindowHelper.cs" />
+    <Page Include="ChooseFiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Information.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

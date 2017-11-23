@@ -30,12 +30,14 @@ namespace AutoComeV1
         Text txt;
         String[] steps;
         ArrayList files = new ArrayList();
-        ArrayList content = new ArrayList();
-       
+        ArrayList types = new ArrayList();
+        //MainWindow myMainWindow;
+        public event Action<Boolean> Settingscheck;
 
         public Settings(String [] predictedSteps, int predictedStart, int difference, Text TXTwindow)
         {
             InitializeComponent();
+            //myMainWindow = mainWindow;
             progressing.Visibility = Visibility.Hidden;
             selectBrush = step1.Background;
             steps = predictedSteps;
@@ -46,10 +48,58 @@ namespace AutoComeV1
             step5.Content = "Step5." + steps[4];
             step6.Content = "Step6." + steps[5];
             txt = TXTwindow;
+            files1.Visibility = Visibility.Hidden;
+            files2.Visibility = Visibility.Hidden;
+            files3.Visibility = Visibility.Hidden;
+            files4.Visibility = Visibility.Hidden;
+            files5.Visibility = Visibility.Hidden;
+            files6.Visibility = Visibility.Hidden;
+            chooseButton1.Visibility = Visibility.Hidden;
+            chooseButton2.Visibility = Visibility.Hidden;
+            chooseButton3.Visibility = Visibility.Hidden;
+            chooseButton4.Visibility = Visibility.Hidden;
+            chooseButton5.Visibility = Visibility.Hidden;
+            chooseButton6.Visibility = Visibility.Hidden;
 
             for (int i = 0; (predictedStart+i * difference) < 10; i++)
             {
                 files.Add(predictedStart + i * difference);
+            }
+            if (steps[0].Contains("Open"))
+            {
+                files1.Text = files[0] + "," + files[1] + "..." + files[files.Count - 1];
+                chooseButton1.Visibility = Visibility.Visible;
+                files1.Visibility = Visibility.Visible;
+            }
+            if (steps[1].Contains("Open"))
+            {
+                files2.Text = files[0] + "," + files[1] + "..." + files[files.Count - 1];
+                chooseButton2.Visibility = Visibility.Visible;
+                files2.Visibility = Visibility.Visible;
+            }
+            if (steps[2].Contains("Open"))
+            {
+                files3.Text = files[0] + "," + files[1] + "..." + files[files.Count - 1];
+                chooseButton3.Visibility = Visibility.Visible;
+                files3.Visibility = Visibility.Visible;
+            }
+            if (steps[3].Contains("Open"))
+            {
+                files4.Text = files[0] + "," + files[1] + "..." + files[files.Count - 1];
+                chooseButton4.Visibility = Visibility.Visible;
+                files4.Visibility = Visibility.Visible;
+            }
+            if (steps[4].Contains("Open"))
+            {
+                files5.Text = files[0] + "," + files[1] + "..." + files[files.Count - 1];
+                chooseButton5.Visibility = Visibility.Visible;
+                files5.Visibility = Visibility.Visible;
+            }
+            if (steps[5].Contains("Open"))
+            {
+                files6.Text = files[0] + "," + files[1] + "..." + files[files.Count - 1];
+                chooseButton6.Visibility = Visibility.Visible;
+                files6.Visibility = Visibility.Visible;
             }
 
             if (steps[5] == "Null")
@@ -111,34 +161,35 @@ namespace AutoComeV1
             step6.IsEnabled = false;
             operateButton.IsEnabled = false;
 
-            
             for (int i = 0; i < 6; i++)
             {
+                Console.WriteLine("steps!!!!" + steps[i]);
                 if (stepFlag[i] == true)
                 {
                     if (steps[i].Contains("title"))
                     {
                         //titleFlag  = true;
-                        content.Add("title");
+                        types.Add("title");
                     }
                     if (steps[i].Contains("abstract"))
                     {
                         //abstractFlag = true;
-                        content.Add("abstract");
+                        types.Add("abstract");
                     }
                     if (steps[i].Contains("content0"))
                     {
                         //content0Flag = true;
-                        content.Add("content0");
+                        types.Add("content0");
                     }
                     if (steps[i].Contains("content1"))
                     {
                         //content1Flag = true;
-                        content.Add("content1");
+                        types.Add("content1");
                     }
                 }
-               
+
             }
+
             Thread t = new Thread(() =>
             {
                 Thread.Sleep(1000);//次线程休眠1秒
@@ -155,10 +206,10 @@ namespace AutoComeV1
             });
             t.Start();
 
-            String oldContent = "";
-            txt.TXTcontent += value => oldContent = value;
+            //String oldContent = "";
+            //txt.TXTcontent += value => oldContent = value;
             txt.Close();
-            Text autoTXT = new Text(files, content,oldContent);
+            Text autoTXT = new Text(files, types);
             autoTXT.Show();
             autoTXT.Activate();
             autoTXT.Focus();
@@ -265,6 +316,12 @@ namespace AutoComeV1
             }
         }
 
-     
+        private void ChooseButtonClick(object sender, RoutedEventArgs e)
+        {
+            //myMainWindow.Activate();
+            //myMainWindow.Focus();
+            //myMainWindow.Topmost = true;
+            //Settingscheck(true);
+        }
     }
 }

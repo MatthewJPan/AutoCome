@@ -20,8 +20,8 @@ namespace AutoComeV1
     /// </summary>
     public partial class Text : Window
     {
-        public event Action<String> TXTcheck;
-        public event Action<String> TXTcontent;
+        //public event Action<String> TXTcheck;
+        //public event Action<String> TXTcontent;
         //String test = "test";
         //ArrayList files = new ArrayList();
         //ArrayList content = new ArrayList();
@@ -29,14 +29,17 @@ namespace AutoComeV1
         {
             InitializeComponent();
         }
-        public Text(ArrayList files, ArrayList types, String oldText)
+        public Text(ArrayList files, ArrayList types)
         {
             InitializeComponent();
 
-            String Content = oldText;
-            Console.WriteLine("!old!" + Content);
+            String Content = Record.content;
+            //Console.WriteLine("!old!" + Content);
+            Console.WriteLine("!files: " + files.Count);
+            Console.WriteLine("!types: " + types.Count);
             for (int i = 0; i < files.Count; i++)
             {
+                
                 for (int j = 0; j < types.Count; j++)
                 {
                     int file = (int)files[i];
@@ -52,8 +55,8 @@ namespace AutoComeV1
         {
             if (Keyboard.Modifiers == ModifierKeys.Control || e.Key == Key.V)
             {
-                if (TXTcheck != null)
-                    TXTcheck("Paste to");
+                //if (TXTcheck != null)
+                Record.addToOperationList("Paste to","TXT file");
                 //Console.WriteLine(test + "********");
             }
         }
@@ -256,8 +259,8 @@ namespace AutoComeV1
 
         private void onClosed(object sender, EventArgs e)
         {
-            String currentContent = content.Text;
-            TXTcontent(currentContent);
+           Record.content = content.Text;
+            //TXTcontent(currentContent);
         }
     }
 }
