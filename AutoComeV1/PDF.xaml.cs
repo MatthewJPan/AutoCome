@@ -21,7 +21,8 @@ namespace AutoComeV1
     public partial class PDF : Window
     {
         String[,] operations = new String[20, 2];
-        public event Action<String[,]> Check;
+        public event Action<String> Check;
+        public event Action<String> CheckTarget;
 
         //public event EventHandler<WindowEventArgs> DialogFinished;
 
@@ -29,16 +30,17 @@ namespace AutoComeV1
         {
             InitializeComponent();
             //operations = passedOperations;
-            for (int i = 0; i < 20; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    operations[i, j] = passedOperations[i,j];
-                    Console.Write(operations[i, j]);
+            
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    for (int j = 0; j < 2; j++)
+            //    {
+            //        operations[i, j] = passedOperations[i,j];
+            //        //Console.Write(operations[i, j]);
                     
-                }
-            }
-            Console.WriteLine();
+            //    }
+            //}
+            //Console.WriteLine();
             //title.Text = passedOperations[19,1];
             this.Activate();
             fileTitle.Text = ("A"+source.ToString()+".pdf");
@@ -336,49 +338,90 @@ namespace AutoComeV1
             if (Keyboard.Modifiers == ModifierKeys.Control|| e.Key == Key.C)
             {
 
-                if (title.SelectedText != null)
+                if (title.SelectedText != "")
                 {
-                    addToOperationList("Copy", "title");
+                    //addToOperationList("Copy", "title");
+                    Check("Copy");
+                    CheckTarget("title");
+
                 }
-                else if (_abstract.SelectedText != null)
+                else if (_abstract.SelectedText != "")
                 {
-                    addToOperationList("Copy", "abstract");
+                    //addToOperationList("Copy", "abstract");
+                    Check("Copy");
+                    CheckTarget("abstract");
                 }
-                else if (content0.SelectedText != null)
+                else if (content0.SelectedText != "")
                 {
-                    addToOperationList("Copy", "content0");
+                    //addToOperationList("Copy", "content0");
+                    Check("Copy");
+                    CheckTarget("content0");
                 }
-                else if (content1.SelectedText != null)
+                else if (content1.SelectedText != "")
                 {
-                    addToOperationList("Copy", "content1");
+                    //addToOperationList("Copy", "content1");
+                    Check("Copy");
+                    CheckTarget("content1");
                 }
             }
             //else if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.V)
             //{
             //    addToOperationList("Paste to", "test.txt");
             //}
-            for (int i = 0; i < 20; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    if(operations[i, j]!="Null")
-                    {
-                        Console.Write(operations[i, j]);
+            ////for (int i = 0; i < 20; i++)
+            ////{
+            ////    for (int j = 0; j < 2; j++)
+            ////    {
+            ////        if(operations[i, j]!="Null")
+            ////        {
+            ////            Console.Write(operations[i, j]);
 
-                    }
+            ////        }
                     
                     
-                }
-            }
-            Console.WriteLine();
+            ////    }
+            ////}
+            //Console.WriteLine();
         }
 
         private void PDF_Closed(object sender, EventArgs e)
         {
-            if (Check != null)
-                Check(operations);
+            ////if (Check != null)
+            ////    Check(operations);
+
 
         }
+
+        
+        private void MouseCapture(object sender, MouseEventArgs e)
+        {
+            if (e.Source == title)
+            {
+                _abstract.Select(0, 0);
+                content0.Select(0, 0);
+                content1.Select(0, 0);
+            }
+            else if (e.Source == _abstract)
+            {
+                title.Select(0, 0);
+                content0.Select(0, 0);
+                content1.Select(0, 0);
+            }
+            else if (e.Source == content0)
+            {
+                title.Select(0, 0);
+                _abstract.Select(0, 0);
+                content1.Select(0, 0);
+            }
+            else
+            {
+                title.Select(0, 0);
+                _abstract.Select(0, 0);
+                content0.Select(0, 0);
+            }
+        }
+
+       
     }
 
     
