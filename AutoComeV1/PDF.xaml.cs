@@ -121,6 +121,17 @@ namespace AutoComeV1
             //    content1.Text = getText(9, "content1");
             //}
         }
+        //private void CloseClick(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
+        //private void Move_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    if (e.LeftButton == MouseButtonState.Pressed)
+        //    {
+        //        this.DragMove();
+        //    }
+        //}
         public string getText(int number, string location)
         {
             string content = " ";
@@ -243,7 +254,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test6title";
                 }
                 else if (location == "abstract")
                 {
@@ -262,7 +273,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test7title";
                 }
                 else if (location == "abstract")
                 {
@@ -281,7 +292,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test8title";
                 }
                 else if (location == "abstract")
                 {
@@ -300,7 +311,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test9title";
                 }
                 else if (location == "abstract")
                 {

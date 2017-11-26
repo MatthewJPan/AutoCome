@@ -6,13 +6,17 @@
         
         mc:Ignorable="d"
         Title="MainWindow" Height="820" Width="1600"
-        ResizeMode="NoResize" Activated="MainActivated">
+        ResizeMode="NoResize" Activated="MainActivated"
+        WindowStyle="None"
+         MouseMove="Move_MouseMove">
 
     <Window.Background>
         <ImageBrush ImageSource="pictures/desktopEmpty.jpg"/>
     </Window.Background>
 
     <Grid>
+        <Button x:Name="closeButton" Content="Button" HorizontalAlignment="Left" Margin="1528,0,0,0" VerticalAlignment="Top" Width="66" Height="37" Background="Transparent" BorderBrush="Transparent" Opacity="0" Click="CloseClick"/>
+
         <Grid HorizontalAlignment="Left" Height="599" Margin="278,144,0,0" VerticalAlignment="Top" Width="1268"  >
             <Image x:Name="PDFicon0"  HorizontalAlignment="Left" Height="100" Margin="10,30,0,0" VerticalAlignment="Top" Width="100" Source="pictures/PDFicon.jpg"/>
 
@@ -95,6 +99,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
+     
 
     </Grid>
 </Window>

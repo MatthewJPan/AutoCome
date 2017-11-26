@@ -25,13 +25,13 @@ namespace AutoComeV1
         //int i = 0;
         //String[,] operations = new String[20, 2];
         String[] steps = new String[6];
-        String newOperationTXT = "";
-        String subOperation = "";
-        String subTarget = " ";
+        //String newOperationTXT = "";
+        //String subOperation = "";
+        //String subTarget = " ";
         int predictedStart = 0;
         int difference = 0;
         Text txt;
-        Boolean SettingsIsOpened = false;
+        //Boolean SettingsIsOpened = false;
 
         public MainWindow()
         {
@@ -53,9 +53,22 @@ namespace AutoComeV1
         SolidColorBrush selectBrush = new SolidColorBrush(Color.FromArgb(30, 0, 0, 255));
         SolidColorBrush predictBrush = new SolidColorBrush(Color.FromArgb(70,0, 255, 0));
 
+        private void CloseClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void Move_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
         private void DoubleClick(object sender, MouseButtonEventArgs e)
         {
+            
             if (e.Source == button0) {
+                Record.startTime= DateTimeOffset.Now.ToUnixTimeMilliseconds();
                 Record.addToOperationList("Open PDF File A", "0");
                 PDF pdf = new PDF(0);
                

@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
         mc:Ignorable="d"
-        Title="Information" Height="152.055" Width="300">
+        Title="Information" Height="175.448" Width="300">
     <Grid>
         <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="Actions Completed." VerticalAlignment="Top" Width="213" Margin="36,0,0,0" FontSize="14" BorderBrush="{x:Null}">
             <TextBox.Background>
                 <ImageBrush ImageSource="pictures/completed.png"/>
             </TextBox.Background>
         </TextBox>
-        <Button x:Name="operateButton" Content="OK" HorizontalAlignment="Left" Margin="153,77,0,0" VerticalAlignment="Top" Width="96" Height="34" Background="#FFBDFF97" Click="OKClick"/>
-        <Button x:Name="cancleButton" Content="Undo" HorizontalAlignment="Left" Margin="31,77,0,0" VerticalAlignment="Top" Width="98" Height="34" Background="White" Click="UndoClick"/>
+        <Button x:Name="operateButton" Content="OK" HorizontalAlignment="Left" Margin="160,72,0,0" VerticalAlignment="Top" Width="96" Height="34" Background="#FFBDFF97" Click="OKClick"/>
+        <Button x:Name="cancleButton" Content="Undo" HorizontalAlignment="Left" Margin="35,72,0,0" VerticalAlignment="Top" Width="98" Height="34" Background="White" Click="UndoClick"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" FontSize="16" Foreground="#FF257A29"><Run Text="T"/><Run Text="ime:"/></TextBlock>
+        <TextBlock x:Name="timeBox" HorizontalAlignment="Left" Margin="60,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Height="23" FontSize="16"><Run Text="in ms"/><LineBreak/><Run/></TextBlock>
 
 
     </Grid>

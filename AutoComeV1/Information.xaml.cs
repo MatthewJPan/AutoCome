@@ -19,14 +19,26 @@ namespace AutoComeV1
     /// </summary>
     public partial class Information : Window
     {
-        public Information()
+        Text txt;
+        public Information(Text currentText)
         {
             InitializeComponent();
+            txt = currentText;
+            Record.stopTime=DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            timeBox.Text = Record.stopTime - Record.startTime+"";
         }
 
         private void UndoClick(object sender, RoutedEventArgs e)
         {
             //TO-DO: undo the actions;
+
+            txt.Close();
+            Text autoTXT = new Text(true);
+            autoTXT.Show();
+            autoTXT.Activate();
+            autoTXT.Focus();
+            autoTXT.Topmost = true;
+            this.Close();
         }
 
         private void OKClick(object sender, RoutedEventArgs e)

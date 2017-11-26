@@ -28,28 +28,42 @@ namespace AutoComeV1
         public Text()
         {
             InitializeComponent();
+            
+        }
+        public Text(Boolean isUndo)
+        {
+            InitializeComponent();
+            content.Text = Record.previousContent;
         }
         public Text(ArrayList files, ArrayList types)
         {
             InitializeComponent();
-
-            String Content = Record.content;
-            //Console.WriteLine("!old!" + Content);
-            Console.WriteLine("!files: " + files.Count);
-            Console.WriteLine("!types: " + types.Count);
-            for (int i = 0; i < files.Count; i++)
-            {
-                
-                for (int j = 0; j < types.Count; j++)
+            //if (isUndo)
+            //{
+            //    content.Text = Record.previousContent;
+            //}
+            //else
+            //{
+                String Content = Record.content;
+                //Console.WriteLine("!old!" + Content);
+                Console.WriteLine("!files: " + files.Count);
+                Console.WriteLine("!types: " + types.Count);
+                for (int i = 0; i < files.Count; i++)
                 {
-                    int file = (int)files[i];
-                    String type = (String)types[j];
-                    Console.WriteLine(file+"  "+type);
-                    Content = Content + "\r\n" + getText(file, type);
-                    Console.WriteLine("!"+Content);
+
+                    for (int j = 0; j < types.Count; j++)
+                    {
+                        int file = (int)files[i];
+                        String type = (String)types[j];
+                        Console.WriteLine(file + "  " + type);
+                        Content = Content + "\r\n" + getText(file, type);
+                        Console.WriteLine("!" + Content);
+                    }
                 }
-            }
-            content.Text = Content;
+                content.Text = Content;
+            
+            //}
+            
         }
         private void CtrlDown(object sender, KeyEventArgs e)
         {
@@ -59,6 +73,7 @@ namespace AutoComeV1
                 Record.addToOperationList("Paste to","TXT file");
                 //Console.WriteLine(test + "********");
             }
+            
         }
         public string getText(int number, string location)
         {
@@ -259,8 +274,30 @@ namespace AutoComeV1
 
         private void onClosed(object sender, EventArgs e)
         {
-           Record.content = content.Text;
+            Record.content = content.Text;
+            //Record.previousContent = content.Text;
             //TXTcontent(currentContent);
+        }
+
+        private void CloseClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void Move_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (content.Text.Contains("test9title"))
+            {
+                Record.stopTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                timeBox.Text = Record.stopTime - Record.startTime + "";
+            }
         }
     }
 }

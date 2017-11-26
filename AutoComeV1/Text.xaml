@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
         mc:Ignorable="d"
-        Title="Text" Height="400" Width="650" Closed="onClosed">
+        Title="Text" Height="400" Width="650" Closed="onClosed"
+        WindowStyle="None" MouseMove="Move_MouseMove" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="pictures/notepad.jpg"/>
         </Grid.Background>
-        <TextBox x:Name="content" AcceptsReturn="True"  HorizontalAlignment="Left" Height="318" Margin="10,55,0,-4" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="606" Cursor="Arrow" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" />
+        <TextBox x:Name="content" AcceptsReturn="True"  HorizontalAlignment="Left" Height="335" Margin="10,55,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="606" Cursor="Arrow" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" TextChanged="TextChanged" />
+        <Button x:Name="closeButton" Content="Button" HorizontalAlignment="Left" Margin="596,0,0,0" VerticalAlignment="Top" Width="36" Height="28" Background="Transparent" BorderBrush="Transparent" Opacity="0" Click="CloseClick"/>
+        <TextBlock HorizontalAlignment="Left" Margin="200,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" FontSize="16" Foreground="#FF257A29"><Run Text="T"/><Run Text="ime:"/></TextBlock>
+        <TextBlock x:Name="timeBox" HorizontalAlignment="Left" Margin="251,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Height="23" FontSize="16"><Run Text="in ms"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>

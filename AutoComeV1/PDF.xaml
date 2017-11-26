@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
         mc:Ignorable="d"
-        Title="PDF" Height="500" Width="600" Closed="PDF_Closed">
+        Title=" " Height="509" Width="600" Closed="PDF_Closed"
+         ResizeMode="NoResize" >
     <Window.Background>
         <ImageBrush ImageSource="pictures/pdfEmpty.jpg"/>
     </Window.Background>
-    <Grid>
-        <TextBox x:Name="title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" Margin="23,127,0,0" TextWrapping="Wrap" Text="Title" IsReadOnly="True" VerticalAlignment="Top" Width="546" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" GotMouseCapture="MouseCapture" />
-        <TextBox x:Name="_abstract" HorizontalAlignment="Left" Height="130" Margin="23,243,0,0" TextWrapping="Wrap" Text="abstract " VerticalAlignment="Top" Width="264" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0"  KeyDown="CtrlDown" GotMouseCapture="MouseCapture"/>
-        <TextBox x:Name="content1" HorizontalAlignment="Left" Height="246" Margin="287,223,0,0" TextWrapping="Wrap" Text="Content " VerticalAlignment="Top" Width="282" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" GotMouseCapture="MouseCapture"/>
-        <TextBox x:Name="content0" HorizontalAlignment="Left" Height="73" Margin="23,393,0,0" TextWrapping="Wrap" Text="content0" VerticalAlignment="Top" Width="264" FontSize="11"  Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" GotMouseCapture="MouseCapture"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="23,223,0,0" TextWrapping="Wrap" Text="Abstract" VerticalAlignment="Top" Width="264" FontWeight="Bold" Cursor="Arrow"  IsReadOnly="True" BorderBrush="White" BorderThickness="0"  />
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="23,373,0,0" TextWrapping="Wrap" Text="Introduction" VerticalAlignment="Top" Width="264" FontWeight="Bold" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" />
-        <TextBox x:Name="fileTitle" HorizontalAlignment="Left" Margin="32,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="430" BorderBrush="White" BorderThickness="0" IsReadOnly="True" Cursor="Arrow" />
+    <Grid Margin="0,0,0,10">
+        <TextBox x:Name="fileTitle" HorizontalAlignment="Left" Margin="29,6,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="430" BorderBrush="White" BorderThickness="0" IsReadOnly="True" Cursor="Arrow" Background="{x:Null}" />
 
+        <Grid HorizontalAlignment="Left" Height="455" Margin="0,35,0,0" VerticalAlignment="Top" Width="600"  >
+          
+            <TextBox x:Name="title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" Margin="23,101,0,0" TextWrapping="Wrap" Text="Title" IsReadOnly="True" VerticalAlignment="Top" Width="546" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" GotMouseCapture="MouseCapture" />
+            <TextBox x:Name="_abstract" HorizontalAlignment="Left" Height="130" Margin="23,217,0,0" TextWrapping="Wrap" Text="abstract " VerticalAlignment="Top" Width="264" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0"  KeyDown="CtrlDown" GotMouseCapture="MouseCapture"/>
+            <TextBox x:Name="content1" HorizontalAlignment="Left" Height="248" Margin="287,197,0,0" TextWrapping="Wrap" Text="Content " VerticalAlignment="Top" Width="282" FontSize="11" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" GotMouseCapture="MouseCapture"/>
+            <TextBox x:Name="content0" HorizontalAlignment="Left" Height="78" Margin="23,367,0,0" TextWrapping="Wrap" Text="content0" VerticalAlignment="Top" Width="264" FontSize="11"  Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" KeyDown="CtrlDown" GotMouseCapture="MouseCapture"/>
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="23,197,0,0" TextWrapping="Wrap" Text="Abstract" VerticalAlignment="Top" Width="264" FontWeight="Bold" Cursor="Arrow"  IsReadOnly="True" BorderBrush="White" BorderThickness="0"  />
+            <TextBox HorizontalAlignment="Left" Height="20" Margin="23,347,0,0" TextWrapping="Wrap" Text="Introduction" VerticalAlignment="Top" Width="264" FontWeight="Bold" Cursor="Arrow" IsReadOnly="True" BorderBrush="White" BorderThickness="0" />
 
+        </Grid>
     </Grid>
 </Window>

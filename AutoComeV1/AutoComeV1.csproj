@@ -139,9 +139,6 @@
     <Resource Include="pictures\desktopEmpty.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pictures\pdfEmpty.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="pictures\PDFicon.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pictures\notepadIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\openfile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\pdfEmpty.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

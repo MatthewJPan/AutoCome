@@ -10,8 +10,9 @@ namespace AutoComeV1
     {
         public static String [,] operations=new String [20,2];
         public static String content;
-        public static double startTime;//open the first file
-        public static double stopTime;//new txt file generated.
+        public static String previousContent;
+        public static long startTime;//open the first file
+        public static long stopTime;//new txt file generated.
 
         public static void addToOperationList(String newOperaton, String newTarget)
         {

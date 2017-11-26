@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
         mc:Ignorable="d"
-        Title="Settings" Height="462.636" Width="438.905">
+        Title="Settings" Height="462.636" Width="438.905" Activated="SettingsActivated">
     <Grid Background="#FFE0EAFF" Margin="0,0,0,-1">
         <TextBox x:Name="informationText" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="We have detected your repetitive steps, &#xD;&#xA;Please unselect the steps you do not want to repeat." VerticalAlignment="Top" Width="396" Margin="18,15,0,0" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Button x:Name="step1" Content="Step1" HorizontalAlignment="Left" Margin="18,60,0,0" VerticalAlignment="Top" Width="396" Height="50" Click="StepsClick" >
