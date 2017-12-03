@@ -41,59 +41,7 @@ namespace AutoComeV1
                 this.DragMove();
             }
         }
-        //private void DoubleClick(object sender, RoutedEventArgs e)
-        //{
-        //    if (e.Source==button0)
-        //    {
-        //        files.Clear();
-        //        files.Add(0);
-        //    }
-        //    else if (e.Source == button1)
-        //    {
-        //        files.Clear();
-        //        files.Add(1);
-        //    }
-        //    else if (e.Source == button2)
-        //    {
-        //        files.Clear();
-        //        files.Add(2);
-        //    }
-        //    else if (e.Source == button3)
-        //    {
-        //        files.Clear();
-        //        files.Add(3);
-        //    }
-        //    else if (e.Source == button4)
-        //    {
-        //        files.Clear();
-        //        files.Add(4);
-        //    }
-        //    else if (e.Source == button5)
-        //    {
-        //        files.Clear();
-        //        files.Add(5);
-        //    }
-        //    else if (e.Source == button6)
-        //    {
-        //        files.Clear();
-        //        files.Add(6);
-        //    }
-        //    else if (e.Source == button7)
-        //    {
-        //        files.Clear();
-        //        files.Add(7);
-        //    }
-        //    else if (e.Source == button8)
-        //    {
-        //        files.Clear();
-        //        files.Add(8);
-        //    }
-        //    else if (e.Source == button9)
-        //    {
-        //        files.Clear();
-        //        files.Add(9);
-        //    }
-        //}
+     
         private void Click(object sender, RoutedEventArgs e)
         {
             if (e.Source == button0)
