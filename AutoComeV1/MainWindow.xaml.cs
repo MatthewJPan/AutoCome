@@ -557,19 +557,6 @@ namespace AutoComeV1
             newSettings.Topmost = true;
         }
 
-        //private void addToOperationList(String newOperaton, String newTarget)
-        //{
-        //    for (int i = 0; i < 19; i++)
-        //    {
-        //        for (int j = 0; j < 2; j++)
-        //        {
-        //            operations[i,j] = operations[i + 1,j];
-        //        }
-                
-        //    }
-        //    operations[19,0] = newOperaton;
-        //    operations[19, 1] = newTarget;
-        //}
 
         private void showMenu(int predictTarget)
         {
