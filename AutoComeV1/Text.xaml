@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Text" Height="400" Width="650" Closed="onClosed"
         WindowStyle="None" MouseMove="Move_MouseMove" ResizeMode="NoResize">
-    <Grid>
+    <Grid KeyDown="UndoKeyDown">
         <Grid.Background>
             <ImageBrush ImageSource="pictures/notepad.jpg"/>
         </Grid.Background>

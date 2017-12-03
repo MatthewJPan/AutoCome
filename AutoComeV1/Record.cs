@@ -8,7 +8,7 @@ namespace AutoComeV1
 {
    public class Record
     {
-        public static String [,] operations=new String [20,2];
+        public static String [,] operations=new String [50,2];
         public static String content;
         public static String previousContent;
         public static long startTime;//open the first file
@@ -16,7 +16,7 @@ namespace AutoComeV1
 
         public static void addToOperationList(String newOperaton, String newTarget)
         {
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < 49; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
@@ -27,6 +27,17 @@ namespace AutoComeV1
             operations[19, 0] = newOperaton;
             operations[19, 1] = newTarget;
         }
+        public static void deleteFromOperationList()
+        {
+            for (int i = 49; i >0; i--)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    operations[i, j] = operations[i-1 , j];
+                }
 
+            }
+           
+        }
     }
 }

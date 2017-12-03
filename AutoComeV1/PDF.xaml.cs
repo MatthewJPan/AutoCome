@@ -434,7 +434,13 @@ namespace AutoComeV1
             }
         }
 
-       
+        private void UndoKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Z)
+            {
+                Record.deleteFromOperationList();
+            }
+        }
     }
 
     

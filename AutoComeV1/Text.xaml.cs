@@ -67,13 +67,17 @@ namespace AutoComeV1
         }
         private void CtrlDown(object sender, KeyEventArgs e)
         {
-            if (Keyboard.Modifiers == ModifierKeys.Control || e.Key == Key.V)
+            if (Keyboard.Modifiers == ModifierKeys.Control)
+            // || e.Key == Key.V
             {
                 //if (TXTcheck != null)
-                Record.addToOperationList("Paste to","TXT file");
+                Record.addToOperationList("Paste to", "TXT file");
                 //Console.WriteLine(test + "********");
             }
-            
+            else
+            {
+                Record.addToOperationList("Keyboard input", e.Key.ToString());
+            }
         }
         public string getText(int number, string location)
         {
@@ -163,7 +167,7 @@ namespace AutoComeV1
                 }
                 else if (location == "abstract")
                 {
-                    content = "test2abstract";
+                    content = "test4abstract";
                 }
                 else if (location == "content0")
                 {
@@ -178,11 +182,11 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test5title";
                 }
                 else if (location == "abstract")
                 {
-                    content = "";
+                    content = "test5abstract";
                 }
                 else if (location == "content0")
                 {
@@ -197,7 +201,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test6title";
                 }
                 else if (location == "abstract")
                 {
@@ -216,7 +220,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test7title";
                 }
                 else if (location == "abstract")
                 {
@@ -235,7 +239,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test8title";
                 }
                 else if (location == "abstract")
                 {
@@ -254,7 +258,7 @@ namespace AutoComeV1
             {
                 if (location == "title")
                 {
-                    content = "";
+                    content = "test9title";
                 }
                 else if (location == "abstract")
                 {
@@ -271,6 +275,7 @@ namespace AutoComeV1
             }
             return content;
         }
+
 
         private void onClosed(object sender, EventArgs e)
         {
@@ -297,6 +302,13 @@ namespace AutoComeV1
             {
                 Record.stopTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                 timeBox.Text = Record.stopTime - Record.startTime + "";
+            }
+        }
+        private void UndoKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Z)
+            {
+                Record.deleteFromOperationList();
             }
         }
     }

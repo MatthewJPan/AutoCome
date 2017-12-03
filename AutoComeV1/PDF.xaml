@@ -10,7 +10,7 @@
     <Window.Background>
         <ImageBrush ImageSource="pictures/pdfEmpty.jpg"/>
     </Window.Background>
-    <Grid Margin="0,0,0,10">
+    <Grid KeyDown="UndoKeyDown" Margin="0,0,0,10">
         <TextBox x:Name="fileTitle" HorizontalAlignment="Left" Margin="29,6,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="430" BorderBrush="White" BorderThickness="0" IsReadOnly="True" Cursor="Arrow" Background="{x:Null}" />
 
         <Grid HorizontalAlignment="Left" Height="455" Margin="0,35,0,0" VerticalAlignment="Top" Width="600"  >

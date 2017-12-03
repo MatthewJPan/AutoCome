@@ -4,18 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoComeV1"
-        mc:Ignorable="d"
-        Title="Information" Height="175.448" Width="300">
-    <Grid>
-        <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="Actions Completed." VerticalAlignment="Top" Width="213" Margin="36,0,0,0" FontSize="14" BorderBrush="{x:Null}">
+        mc:Ignorable="d" Height="106.191" Width="512.333"  Background="#FF74A8FE">
+    <Grid Height="83" Margin="0,0,0.333,-3.667" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="229*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="230*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="Actions Completed" VerticalAlignment="Top" Width="213" Margin="36,0,0,0" FontSize="16" BorderBrush="{x:Null}" FontFamily="Arial" FontWeight="Bold" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="#FFFAF8F8">
             <TextBox.Background>
                 <ImageBrush ImageSource="pictures/completed.png"/>
             </TextBox.Background>
         </TextBox>
-        <Button x:Name="operateButton" Content="OK" HorizontalAlignment="Left" Margin="160,72,0,0" VerticalAlignment="Top" Width="96" Height="34" Background="#FFBDFF97" Click="OKClick"/>
-        <Button x:Name="cancleButton" Content="Undo" HorizontalAlignment="Left" Margin="35,72,0,0" VerticalAlignment="Top" Width="98" Height="34" Background="White" Click="UndoClick"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" FontSize="16" Foreground="#FF257A29"><Run Text="T"/><Run Text="ime:"/></TextBlock>
-        <TextBlock x:Name="timeBox" HorizontalAlignment="Left" Margin="60,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Height="23" FontSize="16"><Run Text="in ms"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="operateButton" Content="OK (O)" HorizontalAlignment="Left" Margin="114,20,0,0" VerticalAlignment="Top" Width="96" Height="34" Background="#92BDFF" Click="OKClick" FontFamily="Arial" FontSize="14" FontWeight="Bold" BorderThickness="0" Grid.Column="3" Grid.RowSpan="2" Foreground="#FFFFFEFE"/>
+        <Button x:Name="cancleButton" Content="Undo (U)" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" Width="98" Height="34" Background="#92BDFF" Click="UndoClick" FontSize="14" FontWeight="Bold" FontFamily="Arial" Grid.Column="3" Grid.RowSpan="2" BorderThickness="0" Foreground="#FFFBF9F9"/>
+        <TextBlock HorizontalAlignment="Left" Margin="118,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" FontSize="10" Foreground="#FFF6FAF7" Grid.RowSpan="2"><Run Text="T"/><Run Text="ime:"/></TextBlock>
+        <TextBlock x:Name="timeBox" HorizontalAlignment="Left" Margin="163,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Height="23" FontSize="10" Grid.ColumnSpan="4" RenderTransformOrigin="0.531,-0.928" Grid.RowSpan="2" Foreground="#FFF7F8F7"><Run Text="in ms"/><LineBreak/><Run/></TextBlock>
 
 
     </Grid>

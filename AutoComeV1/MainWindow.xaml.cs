@@ -24,11 +24,11 @@ namespace AutoComeV1
     {
         //int i = 0;
         //String[,] operations = new String[20, 2];
-        String[] steps = new String[6];
+        String[] steps = new String[10];
         //String newOperationTXT = "";
         //String subOperation = "";
         //String subTarget = " ";
-        int predictedStart = 0;
+        int predictedStart = -1;
         int difference = 0;
         Text txt;
         //Boolean SettingsIsOpened = false;
@@ -38,6 +38,7 @@ namespace AutoComeV1
             InitializeComponent();
             operateButton.Visibility = Visibility.Hidden;
             settingButton.Visibility = Visibility.Hidden;
+            cancelButton.Visibility = Visibility.Hidden;
             //showMenu(4);
             //for (int i = 0; i < 20; i++)
             //{
@@ -576,6 +577,7 @@ namespace AutoComeV1
             {
                 operateButton.Margin = new Thickness(287, 303, 0, 0);
                 settingButton.Margin = new Thickness(287, 346, 0, 0);
+                cancelButton.Margin = new Thickness(287, 389, 0, 0);
                 active0.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -589,6 +591,7 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
 
 
             }
@@ -596,6 +599,7 @@ namespace AutoComeV1
             {
                 operateButton.Margin = new Thickness(436, 303, 0, 0);
                 settingButton.Margin = new Thickness(436, 346, 0, 0);
+                cancelButton.Margin = new Thickness(436, 389, 0, 0);
                 active1.Fill = predictBrush;
                 active0.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -609,12 +613,14 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
 
             }
             else if (predictTarget ==2)
             {
                 operateButton.Margin = new Thickness(590, 303, 0, 0);
                 settingButton.Margin = new Thickness(590, 346, 0, 0);
+                cancelButton.Margin = new Thickness(590, 389, 0, 0);
                 active2.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active0.Fill = Brushes.Transparent;
@@ -628,11 +634,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget ==3)
             {
                 operateButton.Margin = new Thickness(740, 303, 0, 0);
                 settingButton.Margin = new Thickness(740, 346, 0, 0);
+                cancelButton.Margin = new Thickness(740, 389, 0, 0);
                 active3.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -646,11 +654,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 4)
             {
                 operateButton.Margin = new Thickness(886, 303, 0, 0);
                 settingButton.Margin = new Thickness(886, 346, 0, 0);
+                cancelButton.Margin = new Thickness(886, 389, 0, 0);
                 active4.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -664,11 +674,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 5)
             {
                 operateButton.Margin = new Thickness(1040, 303, 0, 0);
                 settingButton.Margin = new Thickness(1040, 346, 0, 0);
+                cancelButton.Margin = new Thickness(1040, 389, 0, 0);
                 active5.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -682,11 +694,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 6)
             {
                 operateButton.Margin = new Thickness(1188, 303, 0, 0);
                 settingButton.Margin = new Thickness(1188, 346, 0, 0);
+                cancelButton.Margin = new Thickness(1188, 389, 0, 0);
                 active6.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -700,11 +714,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 7)
             {
                 operateButton.Margin = new Thickness(1328, 303, 0, 0);
                 settingButton.Margin = new Thickness(1328, 346, 0, 0);
+                cancelButton.Margin = new Thickness(1328, 389, 0, 0);
                 active7.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -718,11 +734,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget ==8)
             {
                 operateButton.Margin = new Thickness(287, 451, 0, 0);
                 settingButton.Margin = new Thickness(287, 494, 0, 0);
+                cancelButton.Margin = new Thickness(287, 527, 0, 0);
                 active8.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -736,11 +754,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
             else if (predictTarget == 9)
             {
                 operateButton.Margin = new Thickness(436, 451, 0, 0);
                 settingButton.Margin = new Thickness(436, 494, 0, 0);
+                cancelButton.Margin = new Thickness(436, 527, 0, 0);
                 active9.Fill = predictBrush;
                 active1.Fill = Brushes.Transparent;
                 active2.Fill = Brushes.Transparent;
@@ -754,36 +774,13 @@ namespace AutoComeV1
                 active10.Fill = Brushes.Transparent;
                 operateButton.Visibility = Visibility.Visible;
                 settingButton.Visibility = Visibility.Visible;
+                cancelButton.Visibility = Visibility.Visible;
             }
 
         }
 
         private void MainActivated(object sender, EventArgs e)
         {
-            //Boolean flag1 = false;
-            //Boolean flag2 = false;
-            //if (subOperation != " " && subOperation != " ")
-            //{
-            //    Record.addToOperationList(subOperation, subTarget);
-            //    subOperation = " ";
-            //    subOperation = " ";
-            //    flag1 = true;
-
-            //}
-            //if (newOperationTXT!=" ")
-            //{
-            //    Record.addToOperationList(newOperationTXT, "Untitiled.txt");
-            //    newOperationTXT = " ";
-            //    flag2 = true;
-            //}
-
-            //if (flag1==true||flag2==true)
-            //{
-            //    CheckPattern();
-            //}
-
-            //Console.WriteLine(newOperationTXT);
-            
 
             for (int i = 0; i < 20; i++)
             {
@@ -809,9 +806,9 @@ namespace AutoComeV1
         {
             Boolean operationFlag = false;
             difference = 0;
-            predictedStart = 0;
+            predictedStart = -1;
             int largestStep = 0;
-            for (int i = 6; i >1; i--) {
+            for (int i = 10; i >1; i--) {
                 for (int j = 0; j< i; j++)
                 {
                     if (Record.operations[19 - j, 0] == Record.operations[19 - i - j, 0])
@@ -846,7 +843,7 @@ namespace AutoComeV1
                         }
                         
                     }
-                    for (int y = largestStep-1; y < 6; y++)
+                    for (int y = largestStep-1; y < 10; y++)
                     {
                         steps[y] = "Null";
                     }
@@ -867,6 +864,30 @@ namespace AutoComeV1
             
            
         }
+
+        private void UndoKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Z)
+            {
+                Record.deleteFromOperationList();
+            }
+        }
+
+        //private void newMouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    if ((e.Source == button0 && predictedStart == 0)|| (e.Source == button1 && predictedStart == 1)|| (e.Source == button2 && predictedStart == 2)|| (e.Source == button3 && predictedStart == 3)
+        //        || (e.Source == button4 && predictedStart == 4)|| (e.Source == button5 && predictedStart == 5)|| (e.Source == button6 && predictedStart == 6)
+        //        || (e.Source == button7 && predictedStart == 7)|| (e.Source == button8 && predictedStart == 8)|| (e.Source == button9 && predictedStart == 9))
+                
+        //    {
+        //        operateButton.Visibility = Visibility.Visible;
+        //        settingButton.Visibility = Visibility.Visible;
+        //        cancelButton.Visibility = Visibility.Visible;
+        //    }
+            
+        //}
+
+       
     }
 
 }

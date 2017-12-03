@@ -8,13 +8,13 @@
         Title="MainWindow" Height="820" Width="1600"
         ResizeMode="NoResize" Activated="MainActivated"
         WindowStyle="None"
-         MouseMove="Move_MouseMove">
+         MouseMove="Move_MouseMove" ShowInTaskbar="False">
 
     <Window.Background>
         <ImageBrush ImageSource="pictures/desktopEmpty.jpg"/>
     </Window.Background>
 
-    <Grid>
+    <Grid KeyDown="UndoKeyDown">
         <Button x:Name="closeButton" Content="Button" HorizontalAlignment="Left" Margin="1528,0,0,0" VerticalAlignment="Top" Width="66" Height="37" Background="Transparent" BorderBrush="Transparent" Opacity="0" Click="CloseClick"/>
 
         <Grid HorizontalAlignment="Left" Height="599" Margin="278,144,0,0" VerticalAlignment="Top" Width="1268"  >
@@ -71,17 +71,17 @@
 
         <Button x:Name="button0" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
         <Button x:Name="button1" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button2" Content=" " HorizontalAlignment="Left" Height="130" Margin="590,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button3" Content=" " HorizontalAlignment="Left" Height="130" Margin="740,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button2" Content=" " HorizontalAlignment="Left" Height="130" Margin="590,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click" />
+        <Button x:Name="button3" Content=" " HorizontalAlignment="Left" Height="130" Margin="740,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click" />
         <Button x:Name="button4" Content=" " HorizontalAlignment="Left" Height="130" Margin="886,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button5" Content=" " HorizontalAlignment="Left" Height="130" Margin="1040,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button6" Content=" " HorizontalAlignment="Left" Height="130" Margin="1188,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button5" Content=" " HorizontalAlignment="Left" Height="130" Margin="1040,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click" />
+        <Button x:Name="button6" Content=" " HorizontalAlignment="Left" Height="130" Margin="1188,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click" />
         <Button x:Name="button7" Content=" " HorizontalAlignment="Left" Height="130" Margin="1328,168,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button8" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
-        <Button x:Name="button9" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
+        <Button x:Name="button8" Content=" " HorizontalAlignment="Left" Height="130" Margin="287,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click" />
+        <Button x:Name="button9" Content=" " HorizontalAlignment="Left" Height="130" Margin="436,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click" />
         <Button x:Name="button10" Content=" " HorizontalAlignment="Left" Height="130" Margin="590,321,0,0" VerticalAlignment="Top" Width="102" Background="Transparent" BorderBrush="Transparent" Opacity="0" MouseDoubleClick="DoubleClick" Click="Click"/>
 
-        <Button x:Name="operateButton" Content="Apply to All" HorizontalAlignment="Left" Margin="590,303,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="ApplyClick">
+        <Button x:Name="operateButton" Content="Apply to All (A)" HorizontalAlignment="Left" Margin="590,303,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="ApplyClick">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFE3F2FF" Offset="0"/>
@@ -90,7 +90,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="settingButton" Content="Open Settings" HorizontalAlignment="Left" Margin="590,346,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="SettingClick">
+        <Button x:Name="settingButton" Content="Open Settings (S)" HorizontalAlignment="Left" Margin="590,346,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="SettingClick">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFE3F2FF" Offset="0"/>
@@ -99,7 +99,26 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-     
+        <Button x:Name="cancelButton" Content="Cancel (C)" HorizontalAlignment="Left" Margin="590,389,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="SettingClick">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFE3F2FF" Offset="0"/>
+                    <GradientStop Color="#FF269EFF" Offset="0.989"/>
+                    <GradientStop Color="#FF5EB4FD"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="41" Margin="1310,778,0,0" TextWrapping="Wrap" Text="AutoCome" VerticalAlignment="Top" Width="111" Background="#FFB6EAF9" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
+        <Button x:Name="onButton" Content=" " HorizontalAlignment="Left" Height="42" Margin="1421,778,0,0" VerticalAlignment="Top" Width="43">
+            <Button.Background>
+                <ImageBrush ImageSource="pictures/on.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="offButton" Content=" " HorizontalAlignment="Left" Height="42" Margin="1469,778,0,0" VerticalAlignment="Top" Width="43">
+            <Button.Background>
+                <ImageBrush ImageSource="pictures/off.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

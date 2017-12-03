@@ -23,7 +23,7 @@ namespace AutoComeV1
     /// </summary>
     public partial class Settings : Window
     {
-        Boolean[] stepFlag = new Boolean[6];
+        Boolean[] stepFlag = new Boolean[10];
         Brush selectBrush;
         //SolidColorBrush selectBrush = new SolidColorBrush(Color.FromArgb(100, 0, 176, 240));
         SolidColorBrush unSelectBrush = new SolidColorBrush(Color.FromArgb(100, 208, 208, 208));
@@ -31,6 +31,7 @@ namespace AutoComeV1
         String[] steps;
         ArrayList files = new ArrayList();
         ArrayList types = new ArrayList();
+        int stepCount=10;
         //MainWindow myMainWindow;
         //public event Action<Boolean> Settingscheck;
         int currentlyShown;
@@ -48,6 +49,10 @@ namespace AutoComeV1
             step4.Content = "Step4." + steps[3];
             step5.Content = "Step5." + steps[4];
             step6.Content = "Step6." + steps[5];
+            step7.Content = "Step7." + steps[6];
+            step8.Content = "Step8." + steps[7];
+            step9.Content = "Step9." + steps[8];
+            step10.Content = "Step10." + steps[9];
             txt = TXTwindow;
             files1.Visibility = Visibility.Hidden;
             files2.Visibility = Visibility.Hidden;
@@ -55,12 +60,21 @@ namespace AutoComeV1
             files4.Visibility = Visibility.Hidden;
             files5.Visibility = Visibility.Hidden;
             files6.Visibility = Visibility.Hidden;
+            files7.Visibility = Visibility.Hidden;
+            files8.Visibility = Visibility.Hidden;
+            files9.Visibility = Visibility.Hidden;
+            files10.Visibility = Visibility.Hidden;
             chooseButton1.Visibility = Visibility.Hidden;
             chooseButton2.Visibility = Visibility.Hidden;
             chooseButton3.Visibility = Visibility.Hidden;
             chooseButton4.Visibility = Visibility.Hidden;
             chooseButton5.Visibility = Visibility.Hidden;
             chooseButton6.Visibility = Visibility.Hidden;
+            chooseButton7.Visibility = Visibility.Hidden;
+            chooseButton8.Visibility = Visibility.Hidden;
+            chooseButton9.Visibility = Visibility.Hidden;
+            chooseButton10.Visibility = Visibility.Hidden;
+
 
             for (int i = 0; (predictedStart+i * difference) < 10; i++)
             {
@@ -103,37 +117,95 @@ namespace AutoComeV1
                 chooseButton6.Visibility = Visibility.Visible;
                 files6.Visibility = Visibility.Visible;
             }
-
-            if (steps[5] == "Null")
+            if (steps[6].Contains("Open"))
             {
-                step6.Visibility = Visibility.Hidden;
-                step6.IsEnabled = false;
-                if (steps[4] == "Null")
+                files7.Text = showFileNmeas();
+                chooseButton7.Visibility = Visibility.Visible;
+                files7.Visibility = Visibility.Visible;
+            }
+            if (steps[7].Contains("Open"))
+            {
+                files8.Text = showFileNmeas();
+                chooseButton8.Visibility = Visibility.Visible;
+                files8.Visibility = Visibility.Visible;
+            }
+            if (steps[8].Contains("Open"))
+            {
+                files9.Text = showFileNmeas();
+                chooseButton9.Visibility = Visibility.Visible;
+                files9.Visibility = Visibility.Visible;
+            }
+            if (steps[9].Contains("Open"))
+            {
+                files10.Text = showFileNmeas();
+                chooseButton10.Visibility = Visibility.Visible;
+                files10.Visibility = Visibility.Visible;
+            }
+
+            if (steps[9] == "Null")
+            {
+                step10.Visibility = Visibility.Hidden;
+                step10.IsEnabled = false;
+                stepCount = 9;
+                if (steps[8] == "Null")
                 {
-                    step5.Visibility = Visibility.Hidden;
-                    step5.IsEnabled = false;
-                    if (steps[3] == "Null")
+                    step9.Visibility = Visibility.Hidden;
+                    step9.IsEnabled = false;
+                    stepCount = 8;
+                    if (steps[7] == "Null")
                     {
-                        step4.Visibility = Visibility.Hidden;
-                        step4.IsEnabled = false;
-                        if (steps[2] == "Null")
+                        step8.Visibility = Visibility.Hidden;
+                        step8.IsEnabled = false;
+                        stepCount = 7;
+                        if (steps[6] == "Null")
                         {
-                            step3.Visibility = Visibility.Hidden;
-                            step3.IsEnabled = false;
-                            if (steps[1] == "Null")
+                            step7.Visibility = Visibility.Hidden;
+                            step7.IsEnabled = false;
+                            stepCount = 6;
+                            if (steps[5] == "Null")
                             {
-                                step2.Visibility = Visibility.Hidden;
-                                step2.IsEnabled = false;
+                                step6.Visibility = Visibility.Hidden;
+                                step6.IsEnabled = false;
+                                stepCount = 5;
+                                if (steps[4] == "Null")
+                                {
+                                    step5.Visibility = Visibility.Hidden;
+                                    step5.IsEnabled = false;
+                                    stepCount = 4;
+                                    if (steps[3] == "Null")
+                                    {
+                                        step4.Visibility = Visibility.Hidden;
+                                        step4.IsEnabled = false;
+                                        stepCount = 3;
+                                        if (steps[2] == "Null")
+                                        {
+                                            step3.Visibility = Visibility.Hidden;
+                                            step3.IsEnabled = false;
+                                            stepCount = 2;
+                                            if (steps[1] == "Null")
+                                            {
+                                                step2.Visibility = Visibility.Hidden;
+                                                step2.IsEnabled = false;
+                                                stepCount = 1;
+                                            }
+                                        }
+                                    }
+                                }
+
                             }
                         }
 
                     }
                 }
             }
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 10; i++)
             {
                 stepFlag[i] = true;
             }
+            double windowHeight= 190 + stepCount * 50;
+            this.Height = windowHeight;
+            operateButton.Margin = new Thickness(219, windowHeight - 100, 0, 0);
+            cancleButton.Margin = new Thickness(18, windowHeight - 100, 0, 0);
 
         }
 
@@ -155,15 +227,23 @@ namespace AutoComeV1
             step4.Visibility = Visibility.Hidden;
             step5.Visibility = Visibility.Hidden;
             step6.Visibility = Visibility.Hidden;
+            step7.Visibility = Visibility.Hidden;
+            step8.Visibility = Visibility.Hidden;
+            step9.Visibility = Visibility.Hidden;
+            step10.Visibility = Visibility.Hidden;
             step1.IsEnabled = false;
             step2.IsEnabled = false;
             step3.IsEnabled = false;
             step4.IsEnabled = false;
             step5.IsEnabled = false;
             step6.IsEnabled = false;
+            step7.IsEnabled = false;
+            step8.IsEnabled = false;
+            step9.IsEnabled = false;
+            step10.IsEnabled = false;
             operateButton.IsEnabled = false;
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine("steps!!!!" + steps[i]);
                 if (stepFlag[i] == true)
@@ -200,30 +280,31 @@ namespace AutoComeV1
             autoTXT.Topmost = true;
 
             Information newInformation = new Information(autoTXT);
+            newInformation.Owner = autoTXT;
             newInformation.Show();
             newInformation.Activate();
             newInformation.Focus();
             newInformation.Topmost = true;
             this.Close();
-            //Thread t = new Thread(() =>
+            //thread t = new thread(() =>
             //{
-            //    Thread.Sleep(1000);//次线程休眠1秒
-            //    Dispatcher.Invoke(new Action(() =>
+            //    thread.sleep(1000);//次线程休眠1秒
+            //    dispatcher.invoke(new action(() =>
             //    {
-            //        Thread.Sleep(2000);
-            //        Information newInformation = new Information();
-            //        newInformation.Show();
-            //        newInformation.Activate();
-            //        newInformation.Focus();
-            //        newInformation.Topmost = true;
-            //        this.Close();
+            //        thread.sleep(2000);
+            //        information newinformation = new information();
+            //        newinformation.show();
+            //        newinformation.activate();
+            //        newinformation.focus();
+            //        newinformation.topmost = true;
+            //        this.close();
             //    }));
             //});
-            //t.Start();
+            //t.start();
 
             //String oldContent = "";
             //txt.TXTcontent += value => oldContent = value;
-            
+
 
             //TO-DO:add a pause 
             //Task.Factory.StartNew(() =>
@@ -233,7 +314,7 @@ namespace AutoComeV1
             //});
 
             //await Task.Delay(1000);
-            
+
         }
 
 
@@ -310,7 +391,7 @@ namespace AutoComeV1
                 }
 
             }
-            else 
+            else if (e.Source == step6)
             {
                 if (stepFlag[5] == true)
                 {
@@ -321,6 +402,62 @@ namespace AutoComeV1
                 {
                     stepFlag[5] = true;
                     step6.Background = selectBrush;
+                }
+
+            }
+            else if (e.Source == step7)
+            {
+                if (stepFlag[6] == true)
+                {
+                    stepFlag[6] = false;
+                    step7.Background = unSelectBrush;
+                }
+                else
+                {
+                    stepFlag[6] = true;
+                    step7.Background = selectBrush;
+                }
+
+            }
+            else if (e.Source == step8)
+            {
+                if (stepFlag[7] == true)
+                {
+                    stepFlag[7] = false;
+                    step8.Background = unSelectBrush;
+                }
+                else
+                {
+                    stepFlag[7] = true;
+                    step8.Background = selectBrush;
+                }
+
+            }
+            else if (e.Source == step9)
+            {
+                if (stepFlag[8] == true)
+                {
+                    stepFlag[8] = false;
+                    step9.Background = unSelectBrush;
+                }
+                else
+                {
+                    stepFlag[8] = true;
+                    step9.Background = selectBrush;
+                }
+
+            }
+            else  
+            {
+                if (stepFlag[9] == true)
+                {
+                    stepFlag[9] = false;
+                    step10.Background = unSelectBrush;
+                }
+                else
+                {
+                    stepFlag[9] = true;
+                    step10.Background = selectBrush;
                 }
 
             }
@@ -351,6 +488,22 @@ namespace AutoComeV1
             else if (e.Source == chooseButton6)
             {
                 currentlyShown = 6;
+            }
+            else if (e.Source == chooseButton7)
+            {
+                currentlyShown = 7;
+            }
+            else if (e.Source == chooseButton8)
+            {
+                currentlyShown = 8;
+            }
+            else if (e.Source == chooseButton9)
+            {
+                currentlyShown = 9;
+            }
+            else if (e.Source == chooseButton10)
+            {
+                currentlyShown = 10;
             }
             ChooseFiles choose = new ChooseFiles(this);
             choose.FilesCheck += value => files = value;
@@ -392,6 +545,22 @@ namespace AutoComeV1
             else if (currentlyShown == 6)
             {
                 files6.Text = showFileNmeas();
+            }
+            else if (currentlyShown == 7)
+            {
+                files7.Text = showFileNmeas();
+            }
+            else if (currentlyShown == 8)
+            {
+                files8.Text = showFileNmeas();
+            }
+            else if (currentlyShown == 9)
+            {
+                files9.Text = showFileNmeas();
+            }
+            else if (currentlyShown == 10)
+            {
+                files10.Text = showFileNmeas();
             }
         }
 

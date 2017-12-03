@@ -162,5 +162,12 @@
   <ItemGroup>
     <Resource Include="pictures\pdfEmpty.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\selectedBackground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\off.png" />
+    <Resource Include="pictures\on.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
