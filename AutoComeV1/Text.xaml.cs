@@ -38,12 +38,7 @@ namespace AutoComeV1
         public Text(ArrayList files, ArrayList types)
         {
             InitializeComponent();
-            //if (isUndo)
-            //{
-            //    content.Text = Record.previousContent;
-            //}
-            //else
-            //{
+          
                 String Content = Record.content;
                 //Console.WriteLine("!old!" + Content);
                 Console.WriteLine("!files: " + files.Count);
