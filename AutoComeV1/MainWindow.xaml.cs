@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,7 @@ namespace AutoComeV1
         int difference = 0;
         Text txt;
         //Boolean SettingsIsOpened = false;
+        Boolean isOn=true;
 
         public MainWindow()
         {
@@ -39,6 +41,7 @@ namespace AutoComeV1
             operateButton.Visibility = Visibility.Hidden;
             settingButton.Visibility = Visibility.Hidden;
             cancelButton.Visibility = Visibility.Hidden;
+            onButton.IsEnabled = false;
             //showMenu(4);
             //for (int i = 0; i < 20; i++)
             //{
@@ -543,7 +546,47 @@ namespace AutoComeV1
 
         private void ApplyClick(object sender, RoutedEventArgs e)
         {
-           //TO-DO：automatically copy all
+            //TO-DO：automatically copy all
+            ArrayList files = new ArrayList();
+            ArrayList types = new ArrayList();
+            for (int i = 0; (predictedStart + i * difference) < 10; i++)
+            {
+                files.Add(predictedStart + i * difference);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                //Console.WriteLine("steps!!!!" + steps[i]);
+               
+                    if (steps[i].Contains("title"))
+                    {
+                        //titleFlag  = true;
+                        types.Add("title");
+                    }
+                    if (steps[i].Contains("abstract"))
+                    {
+                        //abstractFlag = true;
+                        types.Add("abstract");
+                    }
+                    if (steps[i].Contains("content0"))
+                    {
+                        //content0Flag = true;
+                        types.Add("content0");
+                    }
+                    if (steps[i].Contains("content1"))
+                    {
+                        //content1Flag = true;
+                        types.Add("content1");
+                    }
+                
+
+            }
+            Record.previousContent = txt.content.Text;
+            txt.Close();
+            Text autoTXT = new Text(files, types);
+            autoTXT.Show();
+            autoTXT.Activate();
+            autoTXT.Focus();
+            autoTXT.Topmost = true;
         }
 
         private void SettingClick(object sender, RoutedEventArgs e)
@@ -786,7 +829,11 @@ namespace AutoComeV1
             //if (SettingsIsOpened == false)
             //{
             //}
-            CheckPattern();
+            if (isOn)
+            {
+                CheckPattern();
+            }
+            
         }
 
         private void CheckPattern()
@@ -860,21 +907,53 @@ namespace AutoComeV1
             }
         }
 
+        private void CancelClick(object sender, RoutedEventArgs e)
+        {
+            active8.Fill = Brushes.Transparent;
+            active1.Fill = Brushes.Transparent;
+            active2.Fill = Brushes.Transparent;
+            active3.Fill = Brushes.Transparent;
+            active4.Fill = Brushes.Transparent;
+            active5.Fill = Brushes.Transparent;
+            active6.Fill = Brushes.Transparent;
+            active7.Fill = Brushes.Transparent;
+            active0.Fill = Brushes.Transparent;
+            active9.Fill = Brushes.Transparent;
+            active10.Fill = Brushes.Transparent;
+            operateButton.Visibility = Visibility.Hidden;
+            settingButton.Visibility = Visibility.Hidden;
+            cancelButton.Visibility = Visibility.Hidden;
+        }
+
+        private void AppOnClick(object sender, RoutedEventArgs e)
+        {
+            isOn = true;
+            onButton.IsEnabled = false;
+            offButton.IsEnabled = true;
+        }
+
+        private void AppOffClick(object sender, RoutedEventArgs e)
+        {
+            isOn = false;
+            onButton.IsEnabled = true;
+            offButton.IsEnabled = false;
+        }
+
         //private void newMouseEnter(object sender, MouseEventArgs e)
         //{
         //    if ((e.Source == button0 && predictedStart == 0)|| (e.Source == button1 && predictedStart == 1)|| (e.Source == button2 && predictedStart == 2)|| (e.Source == button3 && predictedStart == 3)
         //        || (e.Source == button4 && predictedStart == 4)|| (e.Source == button5 && predictedStart == 5)|| (e.Source == button6 && predictedStart == 6)
         //        || (e.Source == button7 && predictedStart == 7)|| (e.Source == button8 && predictedStart == 8)|| (e.Source == button9 && predictedStart == 9))
-                
+
         //    {
         //        operateButton.Visibility = Visibility.Visible;
         //        settingButton.Visibility = Visibility.Visible;
         //        cancelButton.Visibility = Visibility.Visible;
         //    }
-            
+
         //}
 
-       
+
     }
 
 }

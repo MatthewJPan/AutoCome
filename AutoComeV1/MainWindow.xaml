@@ -99,7 +99,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="cancelButton" Content="Cancel (C)" HorizontalAlignment="Left" Margin="590,389,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="SettingClick">
+        <Button x:Name="cancelButton" Content="Cancel (C)" HorizontalAlignment="Left" Margin="590,389,0,0" VerticalAlignment="Top" Width="150" Height="43" Foreground="White" FontSize="16" FontWeight="Bold" Click="CancelClick">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFE3F2FF" Offset="0"/>
@@ -108,17 +108,19 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="41" Margin="1310,778,0,0" TextWrapping="Wrap" Text="AutoCome" VerticalAlignment="Top" Width="111" Background="#FFB6EAF9" FontWeight="Bold" FontSize="18" TextAlignment="Center"/>
-        <Button x:Name="onButton" Content=" " HorizontalAlignment="Left" Height="42" Margin="1421,778,0,0" VerticalAlignment="Top" Width="43">
+        <Rectangle Fill="#FFBFD9FF" HorizontalAlignment="Left" Height="42" Margin="1310,778,0,0" Stroke="Black" VerticalAlignment="Top" Width="202"/>
+        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="41" Margin="1310,778,0,0" TextWrapping="Wrap" Text="AutoCome" BorderBrush="Transparent" VerticalAlignment="Top" Width="111"  FontWeight="Bold" FontSize="18" TextAlignment="Center" Background="Transparent"/>
+        <Button x:Name="onButton" Content=" " HorizontalAlignment="Left" Height="42" Margin="1421,778,0,0" VerticalAlignment="Top" Width="43"  BorderBrush="Transparent" Click="AppOnClick">
             <Button.Background>
                 <ImageBrush ImageSource="pictures/on.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="offButton" Content=" " HorizontalAlignment="Left" Height="42" Margin="1469,778,0,0" VerticalAlignment="Top" Width="43">
+        <Button x:Name="offButton" Content=" " HorizontalAlignment="Left" Height="42" Margin="1469,778,0,0" VerticalAlignment="Top" Width="43" BorderBrush="Transparent" Click="AppOffClick">
             <Button.Background>
                 <ImageBrush ImageSource="pictures/off.png"/>
             </Button.Background>
         </Button>
+       
 
     </Grid>
 </Window>
