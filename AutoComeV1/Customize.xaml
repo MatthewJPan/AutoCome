@@ -1,0 +1,35 @@
+﻿<Window x:Class="AutoComeV1.Customize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoComeV1"
+        mc:Ignorable="d"
+        Title="Customize" Height="400" Width="400">
+    <Grid>
+        <Label Content="Customize your AutoCome" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" Width="284" FontSize="20"/>
+        <Label Content="Forground Color: " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Backround Color: " HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Font Size: " HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="24,322,0,0" VerticalAlignment="Top" Width="156" Height="37" FontSize="16"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="207,322,0,0" VerticalAlignment="Top" Width="156" Height="37" FontSize="16" Background="#FFAFDEFF"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="182,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="182,164,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FF1700FF" HorizontalAlignment="Left" Height="30" Margin="223,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FF1700FF" HorizontalAlignment="Left" Height="30" Margin="223,194,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FFF3FF00" HorizontalAlignment="Left" Height="30" Margin="264,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FFF3FF00" HorizontalAlignment="Left" Height="30" Margin="264,164,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="30" Margin="305,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="30" Margin="305,164,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FF8ED3F3" HorizontalAlignment="Left" Height="30" Margin="182,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FF8ED3F3" HorizontalAlignment="Left" Height="30" Margin="182,194,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FFFF8B00" HorizontalAlignment="Left" Height="30" Margin="223,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FFFF8B00" HorizontalAlignment="Left" Height="30" Margin="223,164,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FF0E00A0" HorizontalAlignment="Left" Height="30" Margin="264,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <Rectangle Fill="#FF0E00A0" HorizontalAlignment="Left" Height="30" Margin="264,194,0,0" Stroke="Black" VerticalAlignment="Top" Width="41"/>
+        <TextBlock HorizontalAlignment="Left" Margin="251,260,0,0" TextWrapping="Wrap" Text="A" VerticalAlignment="Top" FontSize="16" Height="28" Width="30" RenderTransformOrigin="2.163,0.406"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="182,256,0,0" VerticalAlignment="Top" Width="31" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="305,256,0,0" VerticalAlignment="Top" Width="31" Height="32" FontSize="16" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

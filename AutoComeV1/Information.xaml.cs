@@ -26,6 +26,7 @@ namespace AutoComeV1
             txt = currentText;
             Record.stopTime=DateTimeOffset.Now.ToUnixTimeMilliseconds();
             timeBox.Text = Record.stopTime - Record.startTime+"";
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void UndoClick(object sender, RoutedEventArgs e)

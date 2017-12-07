@@ -23,16 +23,11 @@ namespace AutoComeV1
     /// </summary>
     public partial class MainWindow : Window
     {
-        //int i = 0;
-        //String[,] operations = new String[20, 2];
+
         String[] steps = new String[10];
-        //String newOperationTXT = "";
-        //String subOperation = "";
-        //String subTarget = " ";
         int predictedStart = -1;
         int difference = 0;
         Text txt;
-        //Boolean SettingsIsOpened = false;
         Boolean isOn=true;
 
         public MainWindow()
@@ -42,18 +37,8 @@ namespace AutoComeV1
             settingButton.Visibility = Visibility.Hidden;
             cancelButton.Visibility = Visibility.Hidden;
             onButton.IsEnabled = false;
-            //showMenu(4);
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    for (int j = 0; j < 2; j++)
-            //    {
-            //        operations[i,j] = "Null";
-            //    }
-            //}
-            //operations = passedOperations;
         }
-       
-        //Color color = Color.FromArgb(50, 0, 0, 255);
+
         SolidColorBrush selectBrush = new SolidColorBrush(Color.FromArgb(30, 0, 0, 255));
         SolidColorBrush predictBrush = new SolidColorBrush(Color.FromArgb(70,0, 255, 0));
 
@@ -228,39 +213,7 @@ namespace AutoComeV1
                 txt.Topmost = true;
                 //addToOperationList(newOperationTXT, "Untitiled.txt");
             }
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    for (int j = 0; j < 2; j++)
-            //    {
-            //        if (operations[i, j] != "Null")
-            //        {
-            //            Console.Write(operations[i, j]+"; ");
 
-            //        }
-
-
-            //    }
-            //}
-            //Console.WriteLine();
-            //back0.Fill = Brushes.Black;
-            //PDF pdf = new PDF();
-            //pdf.Show();
-            //pdf.Activate();
-            //pdf.Focus();
-            //pdf.Topmost = true;
-            //{
-            //    i += 1;
-            //    DispatcherTimer timer = new DispatcherTimer();
-            //    timer.Interval = new TimeSpan(0, 0, 0, 0, 300);
-            //    timer.Tick += (s, e1) => { timer.IsEnabled = false; i = 0; };
-            //    timer.IsEnabled = true;
-            //    if (i == 2)
-            //    {
-            //        timer.IsEnabled = false;
-            //        i = 0;
-            //        /*button0.Background = myBrush;*/
-            //    }
-            //}
         }
 
         private void Click(object sender, RoutedEventArgs e)
@@ -549,6 +502,7 @@ namespace AutoComeV1
             //TO-DO：automatically copy all
             ArrayList files = new ArrayList();
             ArrayList types = new ArrayList();
+            int preType=-1;
             for (int i = 0; (predictedStart + i * difference) < 10; i++)
             {
                 files.Add(predictedStart + i * difference);
@@ -577,27 +531,54 @@ namespace AutoComeV1
                         //content1Flag = true;
                         types.Add("content1");
                     }
-                
+                if (steps[i].Contains("#."))
+                {
+                    preType = 0;
+                }
+                else if (steps[i].Contains("CHAR."))
+                {
+                    preType = 1;
+                }
+                else if (steps[i].Contains("char."))
+                {
+                    preType = 2;
+                }
 
             }
+            operateButton.Visibility = Visibility.Hidden;
+            settingButton.Visibility = Visibility.Hidden;
+            cancelButton.Visibility = Visibility.Hidden;
             Record.previousContent = txt.content.Text;
             txt.Close();
-            Text autoTXT = new Text(files, types);
+            Text autoTXT = new Text(files, types, preType);
             autoTXT.Show();
             autoTXT.Activate();
             autoTXT.Focus();
             autoTXT.Topmost = true;
+
+            Information newInformation = new Information(autoTXT);
+            newInformation.Owner = autoTXT;
+            newInformation.Show();
+            newInformation.Activate();
+            newInformation.Focus();
+            newInformation.Topmost = true;
+            
+
         }
 
         private void SettingClick(object sender, RoutedEventArgs e)
         {
             //TO-DO: create instence based on the list of actions detected.
+            operateButton.Visibility = Visibility.Hidden;
+            settingButton.Visibility = Visibility.Hidden;
+            cancelButton.Visibility = Visibility.Hidden;
             Settings newSettings = new Settings(steps,predictedStart,difference, txt);
             //newSettings.Settingscheck += value => SettingsIsOpened = value;
             newSettings.Show();
             newSettings.Activate();
             newSettings.Focus();
             newSettings.Topmost = true;
+            
         }
 
 
@@ -851,6 +832,10 @@ namespace AutoComeV1
                         if (Record.operations[19 - j, 0] == "Open PDF File A")
                         {
                             difference = int.Parse(Record.operations[19 - j, 1]) - int.Parse(Record.operations[19 -i -j, 1]);
+                            if (difference < 0)
+                            {
+                                operationFlag = false;
+                            }
                             predictedStart = int.Parse(Record.operations[19 - j, 1]) + difference;
                         }    
                     }
@@ -869,11 +854,23 @@ namespace AutoComeV1
                     {
                         if (Regex.IsMatch(Record.operations[19 - x, 1], @"^[+-]?\d*$"))
                         {
-                            steps[largestStep-2-x] = Record.operations[19 - x, 0] + " "+"file";
+                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "file";
+                        }
+                        else if (Record.operations[19 - x, 1] == "2.")
+                        {
+                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "#.";
+                        }
+                        else if (Record.operations[19 - x, 1] == "b.")
+                        {
+                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "char.";
+                        }
+                        else if (Record.operations[19 - x, 1] == "B.")
+                        {
+                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "CHAR.";
                         }
                         else
                         {
-                            steps[largestStep-2-x] = Record.operations[19 - x, 0] + " " + Record.operations[19 - x, 1];
+                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + Record.operations[19 - x, 1];
                         }
                         
                     }
@@ -888,15 +885,6 @@ namespace AutoComeV1
                 }
                 
             }
-
-            //if (operationFlag==true&&difference != 0)
-            //{
-            //    showMenu(difference);
-            //}
-
-
-            
-           
         }
 
         private void UndoKeyDown(object sender, KeyEventArgs e)
@@ -904,6 +892,22 @@ namespace AutoComeV1
             if (e.Key == Key.Z)
             {
                 Record.deleteFromOperationList();
+            }
+            else if (e.Key == Key.C)
+            {
+                CancelClick(cancelButton, new RoutedEventArgs());
+            }
+            else if (e.Key == Key.S)
+            {
+                if (isOn)
+                {
+                    AppOffClick(offButton, new RoutedEventArgs());
+                }
+                else
+                {
+                    AppOnClick(onButton, new RoutedEventArgs());
+                  
+                }
             }
         }
 
@@ -930,6 +934,7 @@ namespace AutoComeV1
             isOn = true;
             onButton.IsEnabled = false;
             offButton.IsEnabled = true;
+            Record.clearOperations();
         }
 
         private void AppOffClick(object sender, RoutedEventArgs e)
@@ -937,23 +942,17 @@ namespace AutoComeV1
             isOn = false;
             onButton.IsEnabled = true;
             offButton.IsEnabled = false;
+            
         }
 
-        //private void newMouseEnter(object sender, MouseEventArgs e)
-        //{
-        //    if ((e.Source == button0 && predictedStart == 0)|| (e.Source == button1 && predictedStart == 1)|| (e.Source == button2 && predictedStart == 2)|| (e.Source == button3 && predictedStart == 3)
-        //        || (e.Source == button4 && predictedStart == 4)|| (e.Source == button5 && predictedStart == 5)|| (e.Source == button6 && predictedStart == 6)
-        //        || (e.Source == button7 && predictedStart == 7)|| (e.Source == button8 && predictedStart == 8)|| (e.Source == button9 && predictedStart == 9))
-
-        //    {
-        //        operateButton.Visibility = Visibility.Visible;
-        //        settingButton.Visibility = Visibility.Visible;
-        //        cancelButton.Visibility = Visibility.Visible;
-        //    }
-
-        //}
-
-
+        private void OpenCustomize(object sender, RoutedEventArgs e)
+        {
+            Customize customize = new Customize();
+            customize.Show();
+            customize.Activate();
+            customize.Focus();
+            customize.Topmost = true;
+        }
     }
 
 }

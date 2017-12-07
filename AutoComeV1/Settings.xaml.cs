@@ -31,6 +31,7 @@ namespace AutoComeV1
         String[] steps;
         ArrayList files = new ArrayList();
         ArrayList types = new ArrayList();
+        int preType=-1;
         int stepCount=10;
         //MainWindow myMainWindow;
         //public event Action<Boolean> Settingscheck;
@@ -268,12 +269,24 @@ namespace AutoComeV1
                         //content1Flag = true;
                         types.Add("content1");
                     }
+                    if (steps[i].Contains("#."))
+                    {
+                        preType = 0;
+                    }
+                    else if (steps[i].Contains("CHAR."))
+                    {
+                        preType = 1;
+                    }
+                    else if (steps[i].Contains("char."))
+                    {
+                        preType = 2;
+                    }
                 }
 
             }
             Record.previousContent = txt.content.Text;
             txt.Close();
-            Text autoTXT = new Text(files, types);
+            Text autoTXT = new Text(files, types, preType);
             autoTXT.Show();
             autoTXT.Activate();
             autoTXT.Focus();
