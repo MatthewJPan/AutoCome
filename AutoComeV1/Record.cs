@@ -24,11 +24,13 @@ namespace AutoComeV1
                 }
 
             }
-            operations[19, 0] = newOperaton;
-            operations[19, 1] = newTarget;
+            operations[49, 0] = newOperaton;
+            operations[49, 1] = newTarget;
         }
-        public static void deleteFromOperationList()
+        public static String DeleteFromOperationList()
         {
+            String removedItem ="Removed operation: " + operations[49, 0] + operations[49, 1];
+            Console.WriteLine("removed option: " + removedItem);
             for (int i = 49; i >0; i--)
             {
                 for (int j = 0; j < 2; j++)
@@ -37,7 +39,7 @@ namespace AutoComeV1
                 }
 
             }
-           
+            return removedItem;
         }
         public static string getText(int number, string location)
         {

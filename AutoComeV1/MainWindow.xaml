@@ -125,6 +125,9 @@
                 <ImageBrush ImageSource="pictures/settings.png"/>
             </Button.Background>
         </Button>
+        <Rectangle x:Name="messageback" Fill="#FFBFD9FF" HorizontalAlignment="Left" Height="55" Margin="1310,723,0,0" Stroke="Black" VerticalAlignment="Top" Width="280"/>
+        <TextBox x:Name="messageBox" HorizontalAlignment="Left" Height="43" Margin="1328,729,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="232" BorderBrush="Transparent" Background="{x:Null}"/>
+        <Button x:Name="messageCloseButton" Content="x" HorizontalAlignment="Left" Height="34" Margin="1556,723,0,0" VerticalAlignment="Top" Width="34" BorderBrush="Transparent" Background="Transparent" Click="XButton_Click" FontSize="20" FontWeight="Bold"/>
 
 
 

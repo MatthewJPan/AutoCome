@@ -384,7 +384,7 @@ namespace AutoComeV1
         {
             if (e.Key == Key.Z)
             {
-                Record.deleteFromOperationList();
+                Record.DeleteFromOperationList();
             }
         }
 

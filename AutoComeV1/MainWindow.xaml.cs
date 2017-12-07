@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,6 +38,9 @@ namespace AutoComeV1
             settingButton.Visibility = Visibility.Hidden;
             cancelButton.Visibility = Visibility.Hidden;
             onButton.IsEnabled = false;
+            messageback.Visibility = Visibility.Hidden;
+            messageBox.Visibility = Visibility.Hidden;
+            messageCloseButton.Visibility = Visibility.Hidden;
         }
 
         SolidColorBrush selectBrush = new SolidColorBrush(Color.FromArgb(30, 0, 0, 255));
@@ -466,7 +470,7 @@ namespace AutoComeV1
             }
             else
             {
-                Record.addToOperationList("Unselect", "All");
+                //Record.addToOperationList("Unselect", "All");
                 back0.Fill = Brushes.Transparent;
                 back1.Fill = Brushes.Transparent;
                 back2.Fill = Brushes.Transparent;
@@ -793,7 +797,7 @@ namespace AutoComeV1
         private void MainActivated(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 50; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
@@ -826,17 +830,17 @@ namespace AutoComeV1
             for (int i = 10; i >1; i--) {
                 for (int j = 0; j< i; j++)
                 {
-                    if (Record.operations[19 - j, 0] == Record.operations[19 - i - j, 0])
+                    if (Record.operations[49 - j, 0] == Record.operations[49 - i - j, 0])
                     {
                         operationFlag = true;
-                        if (Record.operations[19 - j, 0] == "Open PDF File A")
+                        if (Record.operations[49 - j, 0] == "Open PDF File A")
                         {
-                            difference = int.Parse(Record.operations[19 - j, 1]) - int.Parse(Record.operations[19 -i -j, 1]);
+                            difference = int.Parse(Record.operations[49 - j, 1]) - int.Parse(Record.operations[49 -i -j, 1]);
                             if (difference < 0)
                             {
                                 operationFlag = false;
                             }
-                            predictedStart = int.Parse(Record.operations[19 - j, 1]) + difference;
+                            predictedStart = int.Parse(Record.operations[49 - j, 1]) + difference;
                         }    
                     }
                     else
@@ -852,25 +856,25 @@ namespace AutoComeV1
                     Console.WriteLine(difference + "***" );
                     for (int x = 0; x < largestStep-1; x++)
                     {
-                        if (Regex.IsMatch(Record.operations[19 - x, 1], @"^[+-]?\d*$"))
+                        if (Regex.IsMatch(Record.operations[49 - x, 1], @"^[+-]?\d*$"))
                         {
-                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "file";
+                            steps[largestStep - 2 - x] = Record.operations[49 - x, 0] + " " + "file";
                         }
-                        else if (Record.operations[19 - x, 1] == "2.")
+                        else if (Record.operations[49 - x, 1] == "2.")
                         {
-                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "#.";
+                            steps[largestStep - 2 - x] = Record.operations[49 - x, 0] + " " + "#.";
                         }
-                        else if (Record.operations[19 - x, 1] == "b.")
+                        else if (Record.operations[49 - x, 1] == "b.")
                         {
-                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "char.";
+                            steps[largestStep - 2 - x] = Record.operations[49 - x, 0] + " " + "char.";
                         }
-                        else if (Record.operations[19 - x, 1] == "B.")
+                        else if (Record.operations[49 - x, 1] == "B.")
                         {
-                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + "CHAR.";
+                            steps[largestStep - 2 - x] = Record.operations[49 - x, 0] + " " + "CHAR.";
                         }
                         else
                         {
-                            steps[largestStep - 2 - x] = Record.operations[19 - x, 0] + " " + Record.operations[19 - x, 1];
+                            steps[largestStep - 2 - x] = Record.operations[49 - x, 0] + " " + Record.operations[49 - x, 1];
                         }
                         
                     }
@@ -891,7 +895,24 @@ namespace AutoComeV1
         {
             if (e.Key == Key.Z)
             {
-                Record.deleteFromOperationList();
+                messageBox.Text= Record.DeleteFromOperationList();
+                messageback.Visibility = Visibility.Visible;
+                messageBox.Visibility = Visibility.Visible;
+                messageCloseButton.Visibility = Visibility.Visible;
+                Thread t = new Thread(() =>
+                {
+                    Thread.Sleep(1000);
+                    Dispatcher.Invoke(new Action(() =>
+                    {
+                        Thread.Sleep(2000);
+                        messageback.Visibility = Visibility.Hidden;
+                        messageBox.Visibility = Visibility.Hidden;
+                        messageCloseButton.Visibility = Visibility.Hidden;
+                    }));
+                });
+                t.Start();
+
+
             }
             else if (e.Key == Key.C)
             {
@@ -952,6 +973,13 @@ namespace AutoComeV1
             customize.Activate();
             customize.Focus();
             customize.Topmost = true;
+        }
+
+        private void XButton_Click(object sender, RoutedEventArgs e)
+        {
+            messageback.Visibility = Visibility.Hidden;
+            messageBox.Visibility = Visibility.Hidden;
+            messageCloseButton.Visibility = Visibility.Hidden;
         }
     }
 
